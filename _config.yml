@@ -1,0 +1,141 @@
+title: Matematikk R1
+author: René Ask, Edvard Munch Videregående Skole
+copyright: "2025"
+# logo: logo/evg_logo_med_1T.png
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", README.md, LICENSE.md, LICENSE_CONTENT.md, HOWTOWRITE.md]
+description: "Oppgaver til matematikk R1 for læreplanen LK20."
+
+options:
+  numbered: true
+
+execute:
+  execute_notebooks: off
+
+parse:
+  myst_enable_extensions:
+    - dollarmath
+    - amsmath
+    - html_image
+    - deflist
+    - tasklist
+    - attrs_inline
+    - attrs_block
+    - smartquotes
+    - colon_fence
+
+
+
+repository:
+  url: https://github.com/reneaas/matematikk_r1/
+  path_to_book: book/
+  branch: main/
+
+
+pdfhtml:
+  extra_css:
+    - _static/pdf_custom.css
+    - _static
+  
+
+extra_static_paths:
+  - _static
+
+html:
+  use_issues_button: false
+  use_repository_button: false
+  nb_number_source_lines: false
+  extra_js:
+    - _static
+    - https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.13.4/mermaid.min.js
+  extra_css:
+    - _static/
+
+sphinx:
+  extra_extensions:
+    - sphinx_proof
+    - sphinx_inline_tabs
+    - sphinxmermaid
+    - sphinxcontrib.tikz
+    - sphinx_jupyterbook_latex
+    - sphinxcontrib.video
+    - "_ext.cas"
+    - "_ext.cas_window"
+    - "_ext.interactive_code"
+    - "_ext.parsons"
+    - "_ext.problems"
+    - "_ext.solution"
+    - "_ext.answer"
+    - "_ext.explore"
+    - "_ext.hints"
+    - "_ext.example"
+    - "_ext.summary"
+    - "_ext.quiz_admonition"
+    - "_ext.turtle"
+    - "_ext.cas_popup"
+    - "_ext.popup"
+    - "_ext.popup_code"
+    - "_ext.theory"
+    - "_ext.underveisoppgave"
+    - "_ext.pair_puzzle"
+    - "_ext.clickable_figure"
+    - "_ext.ggb"
+    - "_ext.exercise"
+    - "_ext.clear"
+    - "_ext.dialogue"
+    - "_ext.quiz"
+    - "_ext.goals"
+    - "_ext.ggb_icon"
+    - "_ext.ggb_popup"
+    - "_ext.timed_quiz"
+    - "_ext.poly_icon"
+    - "_ext.polydiv"
+    - "_ext.horner"
+    - "_ext.plot"
+    - "_ext.multi_plot"
+    - "_ext.signchart"
+
+
+
+
+
+  config:
+    language: norwegian
+    # html_favicon: favicon.ico
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js
+    mathjax3_config:
+      tex:
+        macros:
+          annotateAbove: ["\\mathrel{\\overset{\\substack{\\text{#2} \\\\ \\Bigg\\downarrow}}{#1}}", 2]
+          annotateBelow: ["\\mathrel{\\underset{\\substack{\\Bigg\\uparrow \\\\ \\text{#2}}}{#1}}", 2]
+          cline: ["\\underline{\\phantom{#1}}", 1]
+          and: ["\\quad \\land \\quad"]
+          or: ["\\quad \\lor \\quad"]
+          liff: ["\\quad \\iff \\quad"]
+          limplies: ["\\quad \\implies \\quad"]
+          limpliedby: ["\\quad \\impliedby \\quad"]
+          lland: ["\\; \\land \\;"]
+          degree: ["^\\circ"]
+          qog: ["\\quad \\text{og} \\quad"]
+          qder: ["\\quad \\text{der} \\quad"]
+          qeller: ["\\quad \\text{eller} \\quad"]
+          qhvis: ["\\quad \\text{hvis} \\quad"]
+          qfor: ["\\quad \\text{for} \\quad"]
+          natural: ["\\mathbb{N}"]
+          integer: ["\\mathbb{Z}"]
+          rational: ["\\mathbb{Q}"]
+          real: ["\\mathbb{R}"]
+          irrational: ["\\mathbb{Q}^c"]
+          qcomma: [",\\quad"]
+          nimplies: ["\\quad\\mathrel{\\not\\!\\!\\!\\implies}\\quad"]
+          nimpliedby: ["\\quad\\mathrel{\\not\\!\\!\\!\\impliedby}\\quad"]
+          niff: ["\\quad\\mathrel{\\not\\!\\!\\!\\iff}\\quad"]
+          cubica: ["\\raisebox{-0.4ex}{\\small\\(\\frown\\!\\smile\\)}", 0]
+          cubicb: ["\\raisebox{-0.4ex}{\\small\\(\\smile\\!\\frown\\)}", 0]
+
+
+
+    html_theme_options:
+      pygments_light_style: "github-light"
+      pygments_dark_style: "github-dark-high-contrast"
+    templates_path:
+      - "_templates"

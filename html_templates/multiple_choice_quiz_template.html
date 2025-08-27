@@ -1,0 +1,57 @@
+<!-- Container for the quiz -->
+<div id="quiz-container-tema-undertema-oppgavetype-oppgavenummer" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const img_style = 'display: block; width: 80%; margin-left: auto; margin-right: auto;';
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hvilke programkode(r) vil finne nullpunktet til $f(x) = 5x - 10$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(-5, 3):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(6):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(-1, 2):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(-5, 0):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilken av programkodene under vil gi samme utskrift som <pre><code class="python">for x in range(-2, 4):\n    print(x)</code></pre>',
+                answers: [
+                    { content: '<pre><code class="python">x = -2 \nwhile x <= 4: \n    print(x) \n    x = x + 1</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = -2 \nwhile x < 4: \n    print(x) \n    x = x + 1</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">x = -4 \nwhile x <= 2: \n    print(x) \n    x = x + 1</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">x = -4 \nwhile x < 2: \n    print(x) \n    x = x + 1</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: `Hvilket program passer med animasjonen? <img src="figurer/lineære_funksjoner/likningssystemer/programmering/quiz/quiz_3/spm_1.gif" style="${img_style}">`,
+                answers: [
+                    { content: '<pre><code class="python">for x in range(-2, 3):\n    for y in range(-3, 4):\n        print(x, y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for y in range(-3, 4):\n    for x in range(-2, 3):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-2, 2):\n    for y in range(-3, 4):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for y in range(-2, 3):\n    for x in range(-2, 2):\n        print(x, y)</code></pre>', isCorrect: false },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-tema-undertema-oppgavetype-oppgavenummer', questionsData);
+    });
+
+    
+
+</script>
+
+
+
+
+
