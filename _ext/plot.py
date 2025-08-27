@@ -1,13 +1,14 @@
-"""plot directive: build a flexible plot using plotmath primitives.
+r"""plot directive — complete syntax reference
 
-Usage (MyST):
+Build flexible, textbook-style plots using plotmath primitives and a compact
+YAML-like front-matter. Supports MyST fences (recommended) and classic reST.
+
+Quick start (MyST):
 
 :::{plot}
----
-function: x**2 - 2*x + 3
-function: -2*x + 3
+function: x**2 - 2*x + 3, f(x)
 point: (2, 3)
-annotate: [(1, 2), (2, 3), "Label"]
+annotate: (1, 2), (2, 3), "A→B", 0.35
 xmin: -6
 xmax: 6
 ymin: -10
@@ -16,9 +17,141 @@ ticks: true
 grid: off
 fontsize: 24
 width: 100%
----
-Optional caption text
+xlabel: $x$
+ylabel: $y$
+
+Valgfri bildetekst
 :::
+
+Classic reST is also supported:
+
+.. plot::
+     :width: 100%
+     :align: center
+
+     xmin: -6
+     xmax: 6
+     function: x**2, f(x)
+
+Front matter and options
+------------------------
+- Provide a YAML-like block between two lines with just `---` (preferred), or
+    use unfenced `key: value` lines at the top followed by a blank line. The
+    remaining lines become the optional caption.
+- Repeated keys are allowed for: function, point, annotate, text, vline, hline,
+    line, polygon, fill-polygon, bar, axis.
+- All numbers may be integers or floats unless noted.
+
+Presentation and caching
+------------------------
+- width: CSS width for the inline SVG. Examples: `100%`, `640`, `640px`.
+    A bare number is treated as pixels.
+- align: left | center | right (figure alignment).
+- class: extra CSS classes (space separated) applied to the figure.
+- name: stable file/anchor name (otherwise a content hash is used).
+- alt: alternative text for accessibility; also inserted as an SVG <title>.
+- nocache: force regeneration of the SVG.
+- debug: keep original width/height attributes and skip ID rewriting; also
+    writes a sidecar PDF for inspection when possible.
+
+Axes and layout
+---------------
+- xmin, xmax, ymin, ymax: axis bounds (defaults: [-6, 6] × [-6, 6]).
+- xstep, ystep: tick spacing (default 1 for each).
+- ticks: true|false (default: on if both ticks and grid are omitted).
+- grid: true|false (default: on if both ticks and grid are omitted).
+- fontsize: base font size (default 20).
+- lw: default line width for curves (default 2.5).
+- alpha: global alpha for curves (float, optional; by default curves are opaque).
+- xlabel, ylabel: axis labels. Passed through verbatim — include `$...$` to use
+    math. Optionally add a numeric label pad with a trailing comma, e.g.
+    `xlabel: $t/\mathrm{s}$, 8`. The y-label is placed at the top and drawn
+    horizontally.
+
+Functions (multiple allowed)
+----------------------------
+Key: `function`. Each item may be specified in one of the following forms:
+
+1) Minimal string (SymPy syntax; variable is `x`):
+     - `function: x**2 - 2*x + 3`
+
+2) CSV-like string with optional label and domain/exclusions:
+     - `function: expr, label` → shows label in legend
+     - `function: expr (a,b)` → restricts domain to (a, b)
+     - `function: expr (a,b) \ {x1, x2, ...}` → domain with excluded x-values
+     - `function: expr, label, (a,b) \ {x1, x2}` → combined
+
+3) Literal list/tuple (any order after the expression):
+     - `function: [expr, "label"]`
+     - `function: [expr, (xmin, xmax)]`
+     - `function: [expr, "label", (xmin, xmax)]`
+     - `function: [expr, {x1, x2, ...}]` or `function: [expr, [x1, x2, ...]]`
+         for exclusions; can be combined with label/domain in any order.
+
+Notes:
+- Expressions are parsed with SymPy and evaluated over a dense grid. Obvious
+    discontinuities, extreme jumps, and excluded x-values are split to avoid
+    vertical strokes.
+- Function labels are auto-wrapped for math in the legend. Do not include `$` in
+    the label yourself; write plain text or math tokens (e.g. `f(x)`), and it will
+    render as math in the legend.
+
+Points and bars
+---------------
+- point: `(x, y)`
+- bar: `(x, y), length, orientation`
+    - orientation: `h|hor|horiz|horizontal` or `v|vert|vertical`
+    - Draws a dimension bar with arrow caps. Length is in data units.
+
+Annotations and text
+--------------------
+- annotate: `[(xytext), (xy), "text", arc]`
+    - `(xytext)` is the text location, `(xy)` the point being annotated.
+    - `arc` is an optional curvature parameter (default 0.3).
+    - Outer brackets may be omitted; the directive accepts a tolerant CSV-like
+        variant.
+- text: `[x, y, text]`, `[x, y, text, pos]`, `[x, y, text, bbox]`, or
+    `[x, y, text, pos, bbox]`.
+    - `pos` is any of: top-left, top-right, bottom-left, bottom-right,
+        top-center, bottom-center, center-left, center-right, center-center.
+        Long-offset variants are also available (move the text further from the
+        point): prefix either axis with "long" — e.g. longtop-left, top-longright,
+        center-longleft, etc.
+    - `bbox` can be the literal token `bbox` or a boolean (true/false).
+
+Lines and guides
+----------------
+- vline: `x[, ymin, ymax][, linestyle][, color]`
+- hline: `y[, x0, x1][, linestyle][, color]`
+    - `linestyle` one of: solid, dotted, dashed, dashdot (order with color is free).
+- line: draw `y = a*x + b` with optional style/color, or compute `b` from a
+    given point: `line: a, (x, y)[, linestyle][, color]`. Defaults to dashed if no
+    style is given.
+
+Polygons and filled regions
+---------------------------
+- polygon: `(x,y), (x,y), ...[, show_vertices]` — draws polygon edges. Include
+    the token `show_vertices` to mark vertices.
+- fill-polygon: `(x,y), (x,y), ...[, color][, alpha]` — fills a polygon. The
+    first non-numeric extra is used as color, the first numeric extra as alpha.
+    Defaults: color = blue, alpha = 0.1.
+
+Axis commands
+-------------
+- axis: repeated commands passed to Matplotlib's `ax.axis`, e.g. `equal`,
+    `off`, `tight`, `image`, `square`. Multiple commands are applied in order.
+
+Captions
+--------
+- Any lines after the front matter are treated as the figure caption. With the
+    unfenced format, the caption starts after the first blank line.
+
+Rendering details
+-----------------
+- Output is an inline SVG; IDs are rewritten to avoid collisions, and width/
+    height attributes are stripped for responsiveness (unless `debug` is set).
+- Files are cached in `_static/plot/`. A content hash drives the filename. Use
+    `name:` to override this with a stable name.
 """
 
 from __future__ import annotations
@@ -60,6 +193,17 @@ def _compile_function(expr: str) -> Callable:
         sym = sympy.sympify(expr)
     except Exception as e:
         raise ValueError(f"Ugyldig funksjonsuttrykk '{expr}': {e}")
+    # If the expression does not depend on x, treat it as a constant function
+    if not sym.free_symbols or sym.free_symbols.isdisjoint({x}):
+        const_val = float(sym.evalf())
+
+        def f(arr):
+            a = np.asarray(arr, dtype=float)
+            return np.full_like(a, fill_value=const_val, dtype=float)
+
+        _ = f([0.0, 1.0])
+        return f
+
     fn_np = sympy.lambdify(x, sym, modules=["numpy"])
 
     def f(arr):
@@ -343,18 +487,53 @@ class PlotDirective(SphinxDirective):
             ticks_flag = bool(ticks_flag)
             grid_flag = bool(grid_flag)
 
-        # Compile functions (may be zero or many) and parse optional labels, optional domain (xmin,xmax), and optional exclusions
+        # Compile functions (may be zero or many) and parse optional labels, optional domain (xmin,xmax), exclusions and color
         raw_fn_items = lists.get("function", [])
         fn_exprs: List[str] = []
         fn_labels_list: List[str] = []
         fn_domains_list: List[Tuple[float, float] | None] = []
         fn_exclusions_list: List[List[float]] = []
+        fn_colors_list: List[str] = []
         functions: List[Callable] = []
 
         def _parse_function_item(
             s: str,
-        ) -> Tuple[str, str | None, Tuple[float, float] | None, List[float]]:
+        ) -> Tuple[
+            str,
+            str | None,
+            Tuple[float, float] | None,
+            List[float],
+            str | None,
+        ]:
             s = str(s).strip()
+
+            # Heuristic to detect if a string token looks like a color
+            def _looks_like_color(tok: str) -> bool:
+                if not isinstance(tok, str):
+                    return False
+                t = tok.strip()
+                if not t:
+                    return False
+                # hex colors
+                if re.match(r"^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$", t):
+                    return True
+                # matplotlib single-letter and tab: names
+                if t.lower() in {"b", "g", "r", "c", "m", "y", "k", "w"}:
+                    return True
+                if t.lower().startswith("tab:"):
+                    return True
+                if re.match(r"^C\d+$", t):
+                    return True
+                # plotmath named colors
+                try:
+                    import plotmath as _pm
+
+                    if _pm.COLORS.get(t) is not None:
+                        return True
+                except Exception:
+                    pass
+                return False
+
             # Try literal list/tuple like ("expr", "label") or ("expr", (xmin,xmax)) or ("expr", "label", (xmin,xmax)) in any order
             lit = _safe_literal(s)
             if isinstance(lit, (list, tuple)) and len(lit) >= 1:
@@ -362,6 +541,7 @@ class PlotDirective(SphinxDirective):
                 label: str | None = None
                 domain: Tuple[float, float] | None = None
                 excludes: List[float] = []
+                color: str | None = None
                 for item in list(lit[1:]):
                     # Detect domain tuple/list of two numbers
                     if (
@@ -385,14 +565,27 @@ class PlotDirective(SphinxDirective):
                                 excludes.append(float(v))
                             except Exception:
                                 pass
-                    # Else treat as label if string-like
-                    if label is None and isinstance(item, str):
-                        lab = item.strip()
-                        label = lab if lab else None
-                return expr, label, domain, excludes
+                    # Else string-like: support label/color, order-independent
+                    if isinstance(item, str):
+                        tok = item.strip()
+                        if tok.lower().startswith("label="):
+                            if label is None:
+                                label = tok.split("=", 1)[1].strip()
+                            continue
+                        if tok.lower().startswith("color="):
+                            if color is None:
+                                color = tok.split("=", 1)[1].strip()
+                            continue
+                        if color is None and _looks_like_color(tok):
+                            color = tok
+                        elif label is None:
+                            lab = tok
+                            label = lab if lab else None
+                return expr, label, domain, excludes, color
             # Fallback: look for a domain pattern (a,b), remove it, then split label
             domain: Tuple[float, float] | None = None
             excludes: List[float] = []
+            color: str | None = None
             num_re = r"[+-]?\d+(?:\.\d+)?"
             # Domain with optional set-difference exclusions: (a,b) \ {x1, x2}
             dom_ex_pat = re.compile(
@@ -423,19 +616,35 @@ class PlotDirective(SphinxDirective):
             parts = [p.strip() for p in s_wo_dom.split(",") if p.strip()]
             if parts:
                 expr = parts[0]
-                label = parts[1] if len(parts) > 1 else None
-                return expr, label, domain, excludes
+                label = None
+                # Scan remaining tokens for label/color using heuristics
+                for tok in parts[1:]:
+                    t = tok.strip()
+                    if t.lower().startswith("label="):
+                        if label is None:
+                            label = t.split("=", 1)[1].strip()
+                        continue
+                    if t.lower().startswith("color="):
+                        if color is None:
+                            color = t.split("=", 1)[1].strip()
+                        continue
+                    if color is None and _looks_like_color(t):
+                        color = t
+                    elif label is None:
+                        label = t
+                return expr, label, domain, excludes, color
             # Only expression provided (or empty after cleanup)
-            return s_wo_dom.strip(), None, domain, excludes
+            return s_wo_dom.strip(), None, domain, excludes, None
 
         for item in raw_fn_items:
-            expr, label, domain, excludes = _parse_function_item(item)
+            expr, label, domain, excludes, color = _parse_function_item(item)
             try:
                 functions.append(_compile_function(expr))
                 fn_exprs.append(expr)
                 fn_labels_list.append(label or "")
                 fn_domains_list.append(domain)
                 fn_exclusions_list.append(sorted(excludes))
+                fn_colors_list.append(color or "")
             except Exception as ex:
                 return [
                     self.state_machine.reporter.error(
@@ -938,6 +1147,7 @@ class PlotDirective(SphinxDirective):
                     for (x, y, txt, pos, bbox) in text_vals
                 ]
             ),
+            "|".join(fn_colors_list),
             xmin,
             xmax,
             ymin,
@@ -988,8 +1198,12 @@ class PlotDirective(SphinxDirective):
                     import numpy as np
 
                     any_label = False
-                    for f, lbl, dom, exs in zip(
-                        functions, fn_labels_list, fn_domains_list, fn_exclusions_list
+                    for f, lbl, dom, exs, col_fun in zip(
+                        functions,
+                        fn_labels_list,
+                        fn_domains_list,
+                        fn_exclusions_list,
+                        fn_colors_list,
                     ):
                         x0, x1 = dom if dom is not None else (xmin, xmax)
                         N = int(2**12)
@@ -1053,11 +1267,33 @@ class PlotDirective(SphinxDirective):
                         too_big = np.isfinite(y) & (np.abs(y) > (mag_factor * y_span))
                         if too_big.any():
                             y[too_big] = np.nan
+                        # Resolve per-function color if provided
+                        _col_use = None
+                        if isinstance(col_fun, str) and col_fun.strip():
+                            try:
+                                _col_map = plotmath.COLORS.get(col_fun)
+                            except Exception:
+                                _col_map = None
+                            _col_use = _col_map if _col_map else col_fun
+
                         if lbl:
                             any_label = True
-                            ax.plot(x, y, lw=lw, alpha=alpha, label=f"${lbl}$")
+                            ax.plot(
+                                x,
+                                y,
+                                lw=lw,
+                                alpha=alpha,
+                                label=f"${lbl}$",
+                                **({"color": _col_use} if _col_use else {}),
+                            )
                         else:
-                            ax.plot(x, y, lw=lw, alpha=alpha)
+                            ax.plot(
+                                x,
+                                y,
+                                lw=lw,
+                                alpha=alpha,
+                                **({"color": _col_use} if _col_use else {}),
+                            )
                     if any_label:
                         ax.legend(fontsize=int(fontsize))
 
@@ -1086,7 +1322,12 @@ class PlotDirective(SphinxDirective):
                     for a_l, b_l, st_l, col_l in line_vals:
                         y_line = a_l * x_line + b_l
                         ls = style_map_line.get((st_l or "dashed").lower(), "--")
-                        col_use = col_l or default_color_line
+                        # Resolve color via plotmath.COLORS if provided; fallback to original token then default
+                        if col_l:
+                            _mapped = plotmath.COLORS.get(col_l)
+                        else:
+                            _mapped = None
+                        col_use = (_mapped if _mapped else col_l) or default_color_line
                         if _mcolors is not None:
                             try:
                                 _ = _mcolors.to_rgba(col_use)
@@ -1280,7 +1521,9 @@ class PlotDirective(SphinxDirective):
                     y_min = ymin if y0 is None else y0
                     y_max = ymax if y1 is None else y1
                     ls_val = style_map.get((st or "dotted").lower(), ":")
-                    color_to_try = col if col else default_color
+                    # Resolve user color through plotmath.COLORS, then fallback to original, then default
+                    _mapped = plotmath.COLORS.get(col) if col else None
+                    color_to_try = (_mapped if _mapped else col) or default_color
                     try:
                         ax.vlines(
                             x=x_v,
@@ -1307,7 +1550,11 @@ class PlotDirective(SphinxDirective):
                     x_min = xmin if x0 is None else x0
                     x_max = xmax if x1 is None else x1
                     ls_val_h = style_map.get((st_h or "dotted").lower(), ":")
-                    color_to_try_h = col_h if col_h else default_color
+                    # Resolve user color through plotmath.COLORS, then fallback to original, then default
+                    _mapped_h = plotmath.COLORS.get(col_h) if col_h else None
+                    color_to_try_h = (
+                        _mapped_h if _mapped_h else col_h
+                    ) or default_color
                     try:
                         ax.hlines(
                             y=y_h,
@@ -1341,7 +1588,12 @@ class PlotDirective(SphinxDirective):
                 # filled polygons
                 default_fill_color = plotmath.COLORS.get("blue")
                 for pts, color_fp, alpha_fp in poly_fill_vals:
-                    c = color_fp or default_fill_color
+                    # Resolve user color through plotmath.COLORS, then fallback to original, then default
+                    if color_fp:
+                        _mapped_fp = plotmath.COLORS.get(color_fp)
+                    else:
+                        _mapped_fp = None
+                    c = (_mapped_fp if _mapped_fp else color_fp) or default_fill_color
                     a = 0.1 if alpha_fp is None else alpha_fp
                     try:
                         plotmath.polygon(*pts, edges=False, color=c, alpha=a)
@@ -1358,26 +1610,56 @@ class PlotDirective(SphinxDirective):
                     except Exception:
                         pass
 
-                # Axis labels
-                xl_text = merged.get("xlabel")
-                yl_text = merged.get("ylabel")
+                # Axis labels: allow optional labelpad via "label, pad"
+                def _split_label_and_pad(val: Any) -> tuple[str | None, float | None]:
+                    if not isinstance(val, str):
+                        return None, None
+                    s = val.strip()
+                    if not s:
+                        return None, None
+                    # Try literal form [label, pad] or (label, pad)
+                    lit = _safe_literal(s)
+                    if isinstance(lit, (list, tuple)) and len(lit) >= 1:
+                        label = str(lit[0]).strip()
+                        pad: float | None = None
+                        if len(lit) >= 2:
+                            try:
+                                pad = float(lit[1])
+                            except Exception:
+                                pad = None
+                        return (label if label else None), pad
+                    # CSV fallback: split on last comma so labels with commas still work when quoted
+                    parts = [p.strip() for p in s.split(",")]
+                    if len(parts) >= 2:
+                        try:
+                            pad = float(parts[-1])
+                            label = ",".join(parts[:-1]).strip()
+                            return (label if label else None), pad
+                        except Exception:
+                            pass
+                    return (s if s else None), None
+
+                xl_raw = merged.get("xlabel")
+                yl_raw = merged.get("ylabel")
+                xl_text, xl_pad = _split_label_and_pad(xl_raw)
+                yl_text, yl_pad = _split_label_and_pad(yl_raw)
+
                 if isinstance(yl_text, str) and yl_text.strip():
                     try:
-                        ax.set_ylabel(
-                            f"${yl_text}$",
-                            fontsize=int(fontsize),
-                            loc="top",
-                            rotation="horizontal",
+                        kwargs = dict(
+                            fontsize=int(fontsize), loc="top", rotation="horizontal"
                         )
+                        if yl_pad is not None:
+                            kwargs["labelpad"] = yl_pad
+                        ax.set_ylabel(yl_text, **kwargs)
                     except Exception:
                         ax.set_ylabel(yl_text, fontsize=int(fontsize))
                 if isinstance(xl_text, str) and xl_text.strip():
                     try:
-                        ax.set_xlabel(
-                            f"${xl_text}$",
-                            fontsize=int(fontsize),
-                            loc="right",
-                        )
+                        kwargs = dict(fontsize=int(fontsize), loc="right")
+                        if xl_pad is not None:
+                            kwargs["labelpad"] = xl_pad
+                        ax.set_xlabel(xl_text, **kwargs)
                     except Exception:
                         ax.set_xlabel(xl_text, fontsize=int(fontsize))
 
