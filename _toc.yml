@@ -5,14 +5,11 @@ options:
   numbered: True
 
 parts:
-  - caption: I. Potenser og logaritmer
+  - caption: I. Bevegelse
     numbered: 1
     chapters:
 
-    - file: book/potenser_og_logaritmer/potenser/teori.md
-      sections:
-      - file: book/potenser_og_logaritmer/potenser/oppgaver.md
-        title: Oppgaver
+    - file: book/bevegelse/posisjonsgrafer_og_fartsgrafer/oppgaver.md
 
 
     
