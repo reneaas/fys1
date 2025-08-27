@@ -266,7 +266,6 @@ xlabel: $t / \mathrm{s}$
 ylabel: $s / \mathrm{m}$, -40
 lw: 4
 fontsize: 26
-nocache:
 :::
 ::::
 
@@ -285,7 +284,6 @@ ymin: -5
 ymax: 5
 lw: 4
 fontsize: 26
-nocache:
 :::
 ::::
 
