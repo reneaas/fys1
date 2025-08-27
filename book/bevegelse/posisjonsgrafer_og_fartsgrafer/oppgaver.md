@@ -835,9 +835,6 @@ Vi setter startposisjonen til syklisten til $s = 0 \, \mathrm{m}$ ved $t = 0 \, 
 Tegn en skisse av posisjonsgrafen til syklisten.
 
 ::::{answer}
----
-dropdown: 0
----
 :::{plot}
 width: 100%
 xmin: -2
