@@ -495,7 +495,7 @@ v(t) =
     \\
     4, \quad 2 \leq t < 4 \\
     \\
-    -t + 4, \quad 4 \leq t \leq 8. 
+    -t + 8, \quad 4 \leq t \leq 8. 
 \end{cases}
 $$
 
