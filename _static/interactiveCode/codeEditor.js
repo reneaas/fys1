@@ -206,7 +206,15 @@ class CodeEditor {
 
                 for (const keyword of keywords) {
                     if (stream.match(keyword)) {
-                        return keyword.replace("# ", "").toLowerCase().replace(" ", "").replace(/\?+/g, "question");
+                        // Special-case: map "# <--" to the same class as TODO
+                        if (keyword === "# <--") {
+                            return "todo";
+                        }
+                        return keyword
+                            .replace("# ", "")
+                            .toLowerCase()
+                            .replace(" ", "")
+                            .replace(/\?+/g, "question");
                     }
                 }
                 

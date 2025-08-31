@@ -1,0 +1,2774 @@
+
+<!DOCTYPE html>
+
+
+<html lang="norwegian" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2. Oppgaver: Programmering av posisjonsgrafer &#8212; Fysikk 1</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/cas_popup.css?v=1ebfadd1" />
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/popup.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/popup_code.css?v=4b4feebf" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/general_style.css?v=1bea105b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=68f9364b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/dialogue.css?v=1b585024" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=f84a357c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/tabs.css?v=a560da15" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/misc.css?v=55d93a12" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/geogebra.css?v=fd180d66" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=fed7d54b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/grids.css?v=7667ba21" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/cas_popup.css?v=1ebfadd1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/popup_code.css?v=4b4feebf" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=89e27729" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=20be8392" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/style.css?v=f77426ac" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/popup/popup.css?v=2d27c3a4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_default_cm.css?v=3beebd47" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_default_cm.css?v=c880a553" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/clickable_figures/style.css?v=d35dfce7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/escapeRoom/style.css?v=b30732ed" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=9fbab2c7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mathjax/style.css?v=f2a0e64a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=c712eed9"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/tabs.js?v=3ee01567"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"annotateAbove": ["\\mathrel{\\overset{\\substack{\\text{#2} \\\\ \\Bigg\\downarrow}}{#1}}", 2], "annotateBelow": ["\\mathrel{\\underset{\\substack{\\Bigg\\uparrow \\\\ \\text{#2}}}{#1}}", 2], "cline": ["\\underline{\\phantom{#1}}", 1], "and": ["\\quad \\land \\quad"], "or": ["\\quad \\lor \\quad"], "liff": ["\\quad \\iff \\quad"], "limplies": ["\\quad \\implies \\quad"], "limpliedby": ["\\quad \\impliedby \\quad"], "lland": ["\\; \\land \\;"], "degree": ["^\\circ"], "qog": ["\\quad \\text{og} \\quad"], "qder": ["\\quad \\text{der} \\quad"], "qeller": ["\\quad \\text{eller} \\quad"], "qhvis": ["\\quad \\text{hvis} \\quad"], "qfor": ["\\quad \\text{for} \\quad"], "natural": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rational": ["\\mathbb{Q}"], "real": ["\\mathbb{R}"], "irrational": ["\\mathbb{Q}^c"], "qcomma": [",\\quad"], "nimplies": ["\\quad\\mathrel{\\not\\!\\!\\!\\implies}\\quad"], "nimpliedby": ["\\quad\\mathrel{\\not\\!\\!\\!\\impliedby}\\quad"], "niff": ["\\quad\\mathrel{\\not\\!\\!\\!\\iff}\\quad"], "cubica": ["\\raisebox{-0.4ex}{\\small\\(\\frown\\!\\smile\\)}", 0], "cubicb": ["\\raisebox{-0.4ex}{\\small\\(\\smile\\!\\frown\\)}", 0]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/bevegelse/programmering/oppgaver';</script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
+    <script src="../../../_static/utils.js?v=14803243"></script>
+    <script src="../../../_static/geogebra-setup.js?v=c67998b1"></script>
+    <script src="../../../_static/static_code_blocks.js?v=e512471c"></script>
+    <script src="../../../_static/serviceWorker.js?v=19bb19ce"></script>
+    <script src="../../../_static/multipleChoiceQuiz/multipleChoiceQuiz.js?v=7d161c2c"></script>
+    <script src="../../../_static/multipleChoiceQuiz/utils.js?v=2c6f871c"></script>
+    <script src="../../../_static/multipleChoiceQuiz/multipleChoiceQuestion.js?v=c6ce1ca2"></script>
+    <script src="../../../_static/multipleChoiceQuiz/sequentialMultipleChoiceQuiz.js?v=3bdb2358"></script>
+    <script src="../../../_static/multipleChoiceQuiz/timedMultipleChoiceQuiz.js?v=9accc73d"></script>
+    <script src="../../../_static/interactiveCode/workerManager.js?v=de8adb65"></script>
+    <script src="../../../_static/interactiveCode/interactiveCodeSetup.js?v=49566f0b"></script>
+    <script src="../../../_static/interactiveCode/pythonRunner.js?v=e9f0c2d2"></script>
+    <script src="../../../_static/interactiveCode/turtleCode.js?v=0d62d95e"></script>
+    <script src="../../../_static/interactiveCode/codeEditor.js?v=b893dff5"></script>
+    <script src="../../../_static/pairPuzzle/game.js?v=cb8b0d45"></script>
+    <script src="../../../_static/pairPuzzle/dropZone.js?v=56907477"></script>
+    <script src="../../../_static/pairPuzzle/draggableItem.js?v=5767251d"></script>
+    <script src="../../../_static/popup/popup.js?v=5db611f4"></script>
+    <script src="../../../_static/skulpt/skulpt.js?v=51c28977"></script>
+    <script src="../../../_static/clickable_figures/clickable_figure.js?v=dd2467e6"></script>
+    <script src="../../../_static/escapeRoom/escapeRoom.js?v=cdbaa3bb"></script>
+    <script src="../../../_static/parsons_puzzle/parsonsPuzzle.js?v=6e8c8774"></script>
+    <script src="../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="1. Oppgaver: Posisjonsgrafer og fartsgrafer" href="../posisjonsgrafer_og_fartsgrafer/oppgaver.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="norwegian"/>
+<!-- Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.27.0/full/pyodide.js"></script>
+
+
+<!-- CodeMirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/github_dark_cm.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/one_dark_cm.css">
+
+<!-- CodeMirror scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- highlighting of code in Parsons puzzle -->
+<head>
+    <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+    <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
+</head>
+
+
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch-improved@0.3.1/dist/jquery.ui.touch-punch-improved.min.js"></script>
+
+
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Fysikk 1</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">I. Bevegelse</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../posisjonsgrafer_og_fartsgrafer/oppgaver.html">1. Oppgaver: Posisjonsgrafer og fartsgrafer</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Oppgaver: Programmering av posisjonsgrafer</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Last ned denne siden">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/book/bevegelse/programmering/oppgaver.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Last ned kildefilen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Skriv ut til PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullskjerm-modus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Oppgaver: Programmering av posisjonsgrafer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="oppgaver-programmering-av-posisjonsgrafer">
+<h1><span class="section-number">2. </span>Oppgaver: Programmering av posisjonsgrafer<a class="headerlink" href="#oppgaver-programmering-av-posisjonsgrafer" title="Link to this heading">#</a></h1>
+<div class="admonition exercise">
+<p class="admonition-title">Oppgave 1</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+a</label><div class="sd-tab-content docutils">
+<p>Nedenfor vises et program som skriver ut noen tall.</p>
+<p>Les programmet og forsutsi hvilke tall som skrives ut:</p>
+
+        <div id="container-code-eef3b141"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`t = 0
+while t < 4:
+    print(t)
+    t = t + 1
+`;
+
+                makePredictionInteractiveCode(
+                    "container-code-eef3b141",
+                    code,
+                );
+            });
+        </script>
+        </div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+b</label><div class="sd-tab-content docutils">
+<p>Nedenfor vises et program som skriver ut noen tall.</p>
+<p>Les programmet og forsutsi hvilke tall som skrives ut:</p>
+
+        <div id="container-code-ee4266cf"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`t = 0
+while t < 4:
+    print(t)
+    t = t + 0.5 # <-- legg merke til forskjellen fra forrige program
+`;
+
+                makePredictionInteractiveCode(
+                    "container-code-ee4266cf",
+                    code,
+                );
+            });
+        </script>
+        </div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+c</label><div class="sd-tab-content docutils">
+<p>Nedenfor vises et program som skriver ut noen tall.</p>
+<p>Les programmet og forsutsi hvilke tall som skrives ut:</p>
+
+        <div id="container-code-40180358"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`t = 0
+while t < 4:
+    print(t)
+    t = t + 0.1 # <-- legg merke til forskjellen fra forrige program
+`;
+
+                makePredictionInteractiveCode(
+                    "container-code-40180358",
+                    code,
+                );
+            });
+        </script>
+        </div>
+</div>
+</div>
+<hr class="docutils" />
+<aside class="margin sidebar">
+<p class="sidebar-title">Tips: Oppgave 2</p>
+<p>Tegn fartsgrafen for farten som er brukt i hvert program først!</p>
+<p>Du kan forvente små avvik fra det eksakte svaret når du kjører programmene, spesielt i oppgave <strong>c</strong>.</p>
+</aside>
+<div class="admonition exercise">
+<p class="admonition-title">Oppgave 2</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+a</label><div class="sd-tab-content docutils">
+<p>Nedenfor vises et program som regner ut posisjonen til en gjenstand.</p>
+<p>Bestem ved regning hvilken verdi som skrives ut av programmet. Sjekk svaret ditt nedenfor!</p>
+
+        <div id="container-code-a821a1b5"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`s = 0
+t = 0
+dt = 1
+while t < 5:
+    v = 2
+    s = s + v * dt
+
+    t = t + dt
+
+print(s)`;
+
+                makePredictionInteractiveCode(
+                    "container-code-a821a1b5",
+                    code,
+                );
+            });
+        </script>
+        </div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+b</label><div class="sd-tab-content docutils">
+<p>Nedenfor vises et program som regner ut posisjonen til en gjenstand.</p>
+<p>Bestem ved regning hvilken verdi som skrives ut av programmet. Sjekk svaret ditt nedenfor!</p>
+
+        <div id="container-code-1388bca9"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`s = 0
+t = 0
+dt = 0.1
+while t < 10:
+    v = t - 5
+    s = s + v * dt
+
+    t = t + dt
+
+print(s)`;
+
+                makePredictionInteractiveCode(
+                    "container-code-1388bca9",
+                    code,
+                );
+            });
+        </script>
+        </div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+c</label><div class="sd-tab-content docutils">
+<p>Nedenfor vises et program som regner ut posisjonen til en gjenstand.</p>
+<p>Bestem ved regning hvilken verdi som skrives ut av programmet. Sjekk svaret ditt nedenfor!</p>
+
+        <div id="container-code-0bf6138f"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`s = 2
+t = 0
+dt = 0.01
+while t < 5:
+    v = 2*t
+    s = s + v * dt
+
+    t = t + dt
+
+print(s)`;
+
+                makePredictionInteractiveCode(
+                    "container-code-0bf6138f",
+                    code,
+                );
+            });
+        </script>
+        </div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="admonition exercise">
+<p class="admonition-title">Oppgave 3</p>
+<p>I figuren nedenfor vises strategien for å bestemme arealet under en fartsgraf.</p>
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/annotert.svg"><img alt="../../../_images/annotert.svg" class="no-click adaptive-figure" src="../../../_images/annotert.svg" style="width: 80%;" /></a>
+</figure>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+a</label><div class="sd-tab-content docutils">
+<p>Programmet nedenfor bruker strategien som er vist i figuren, men programmet er plassert i tilfeldig rekkefølge.</p>
+<p>Sett sammen programmet i riktig rekkefølge.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+b</label><div class="sd-tab-content docutils">
+<p>Forklar hva betydningen til <code class="code docutils literal highlight highlight-python"><span class="n">dt</span></code> i programmet har i figuren ovenfor.</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+c</label><div class="sd-tab-content docutils">
+<p>Forklar hva linje 6 i programmet betyr ut ifra figuren ovenfor.</p>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+d</label><div class="sd-tab-content docutils">
+<p>Hva er det kodelinje 8 gjør?</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+e</label><div class="sd-tab-content docutils">
+<p>Hvilken startposisjon er brukt i programmet?</p>
+<p>Bruk programmet til å bestemme sluttposisjonen til bevegelsen (du må nok gjøre <code class="code docutils literal highlight highlight-python"><span class="n">dt</span></code> litt mindre)</p>
+</div>
+</div>
+
+        <div id="container-parsons-puzzle-puzzle-c0c236b4" class="puzzle-container"></div>
+        <div id="container-kode-puzzle-c0c236b4" style="display: none"></div>
+
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`s = 0;t = 0;dt = 1
+while t < 8:
+    v = -t + 4.5
+    s = s + v * dt
+
+    t = t + dt
+
+print(s)`;
+
+                const puzzleContainerId = 'container-parsons-puzzle-puzzle-c0c236b4';
+                const editorId = 'container-kode-puzzle-c0c236b4';
+
+                const switchToCodeEditor = makeCallbackFunction(puzzleContainerId, editorId);
+                const puzzle = new ParsonsPuzzle(
+                    puzzleContainerId,
+                    code,
+                    switchToCodeEditor,
+                );
+            });    
+        </script>
+        </div>
+<hr class="docutils" />
+<div class="admonition exercise">
+<p class="admonition-title">Oppgave 4</p>
+<p>I figuren nedenfor vises fartsgrafen til en gjenstand. Vi antar startposisjonen er <span class="math notranslate nohighlight">\(s = 0 \, \mathrm{m}\)</span>.</p>
+<figure class="adaptive-figure plot-figure no-click align-center">
+<div class="graph-image no-click no-scaled-link"><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 503.436281 339.646325" xmlns="http://www.w3.org/2000/svg" version="1.1" class="graph-inline-svg" role="img" aria-label="Tilpasset figur" style="width:80%; height:auto; display:block; margin:0 auto;"><title>Tilpasset\ figur</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2025-08-30T12:52:04.121864</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="cpl_6815129ff946_23c695_figure_1">
+  <g id="cpl_6815129ff946_23c695_patch_1">
+   <path d="M 0 339.646325 
+L 503.436281 339.646325 
+L 503.436281 0 
+L 0 0 
+L 0 339.646325 
+z
+" style="fill: none"/>
+  </g>
+  <g id="cpl_6815129ff946_23c695_axes_1">
+   <g id="cpl_6815129ff946_23c695_patch_2">
+    <path d="M 66.472698 332.446325 
+L 493.236281 332.446325 
+L 493.236281 17.66264 
+L 66.472698 17.66264 
+L 66.472698 332.446325 
+z
+" style="fill: none"/>
+   </g>
+   <g id="cpl_6815129ff946_23c695_matplotlib.axis_1">
+    <g id="cpl_6815129ff946_23c695_xtick_1">
+     <g id="cpl_6815129ff946_23c695_line2d_1">
+      <path d="M 151.825415 332.446325 
+L 151.825415 17.66264 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_2">
+      <defs>
+       <path id="cpl_6815129ff946_23c695_m0372dbd132" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_m0372dbd132" x="151.825415" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_1">
+      <!-- $\mathdefault{1}$ -->
+      <g transform="translate(147.256367 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-31" d="M 1702 4058 
+C 1702 4192 1696 4192 1606 4192 
+C 1357 3916 979 3827 621 3827 
+C 602 3827 570 3827 563 3808 
+C 557 3795 557 3782 557 3648 
+C 755 3648 1088 3686 1344 3839 
+L 1344 461 
+C 1344 236 1331 160 781 160 
+L 589 160 
+L 589 0 
+C 896 0 1216 0 1523 0 
+C 1830 0 2150 0 2458 0 
+L 2458 160 
+L 2266 160 
+C 1715 160 1702 230 1702 458 
+L 1702 4058 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-31" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_xtick_2">
+     <g id="cpl_6815129ff946_23c695_line2d_3">
+      <path d="M 194.501773 332.446325 
+L 194.501773 17.66264 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_4">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_m0372dbd132" x="194.501773" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_2">
+      <!-- $\mathdefault{2}$ -->
+      <g transform="translate(189.932725 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-32" d="M 2669 989 
+L 2554 989 
+C 2490 536 2438 459 2413 420 
+C 2381 369 1920 369 1830 369 
+L 602 369 
+C 832 619 1280 1072 1824 1597 
+C 2214 1967 2669 2402 2669 3035 
+C 2669 3790 2067 4224 1395 4224 
+C 691 4224 262 3604 262 3030 
+C 262 2780 448 2748 525 2748 
+C 589 2748 781 2787 781 3010 
+C 781 3207 614 3264 525 3264 
+C 486 3264 448 3258 422 3245 
+C 544 3790 915 4058 1306 4058 
+C 1862 4058 2227 3617 2227 3035 
+C 2227 2479 1901 2000 1536 1584 
+L 262 146 
+L 262 0 
+L 2515 0 
+L 2669 989 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-32" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_xtick_3">
+     <g id="cpl_6815129ff946_23c695_line2d_5">
+      <path d="M 237.178131 332.446325 
+L 237.178131 17.66264 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_6">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_m0372dbd132" x="237.178131" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_3">
+      <!-- $\mathdefault{3}$ -->
+      <g transform="translate(232.609083 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-33" d="M 1414 2157 
+C 1984 2157 2234 1662 2234 1090 
+C 2234 320 1824 25 1453 25 
+C 1114 25 563 194 390 693 
+C 422 680 454 680 486 680 
+C 640 680 755 782 755 948 
+C 755 1133 614 1216 486 1216 
+C 378 1216 211 1165 211 926 
+C 211 335 787 -128 1466 -128 
+C 2176 -128 2720 430 2720 1085 
+C 2720 1707 2208 2157 1600 2227 
+C 2086 2328 2554 2756 2554 3329 
+C 2554 3820 2048 4179 1472 4179 
+C 890 4179 378 3829 378 3329 
+C 378 3110 544 3072 627 3072 
+C 762 3072 877 3155 877 3321 
+C 877 3486 762 3569 627 3569 
+C 602 3569 570 3569 544 3557 
+C 730 3959 1235 4032 1459 4032 
+C 1683 4032 2106 3925 2106 3320 
+C 2106 3143 2080 2828 1862 2550 
+C 1670 2304 1453 2304 1242 2284 
+C 1210 2284 1062 2269 1037 2269 
+C 992 2263 966 2257 966 2208 
+C 966 2163 973 2157 1101 2157 
+L 1414 2157 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-33" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_xtick_4">
+     <g id="cpl_6815129ff946_23c695_line2d_7">
+      <path d="M 279.854489 332.446325 
+L 279.854489 17.66264 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_8">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_m0372dbd132" x="279.854489" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_4">
+      <!-- $\mathdefault{4}$ -->
+      <g transform="translate(275.285442 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-34" d="M 2150 4122 
+C 2150 4256 2144 4256 2029 4256 
+L 128 1254 
+L 128 1088 
+L 1779 1088 
+L 1779 457 
+C 1779 224 1766 160 1318 160 
+L 1197 160 
+L 1197 0 
+C 1402 0 1747 0 1965 0 
+C 2182 0 2528 0 2733 0 
+L 2733 160 
+L 2611 160 
+C 2163 160 2150 224 2150 457 
+L 2150 1088 
+L 2803 1088 
+L 2803 1254 
+L 2150 1254 
+L 2150 4122 
+z
+M 1798 3703 
+L 1798 1254 
+L 256 1254 
+L 1798 3703 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-34" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_xtick_5">
+     <g id="cpl_6815129ff946_23c695_line2d_9">
+      <path d="M 322.530848 332.446325 
+L 322.530848 17.66264 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_10">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_m0372dbd132" x="322.530848" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_5">
+      <!-- $\mathdefault{5}$ -->
+      <g transform="translate(317.9618 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-35" d="M 730 3692 
+C 794 3666 1056 3584 1325 3584 
+C 1920 3584 2246 3911 2432 4100 
+C 2432 4157 2432 4192 2394 4192 
+C 2387 4192 2374 4192 2323 4163 
+C 2099 4058 1837 3973 1517 3973 
+C 1325 3973 1037 3999 723 4139 
+C 653 4171 640 4171 634 4171 
+C 602 4171 595 4164 595 4037 
+L 595 2203 
+C 595 2089 595 2057 659 2057 
+C 691 2057 704 2070 736 2114 
+C 941 2401 1222 2522 1542 2522 
+C 1766 2522 2246 2382 2246 1289 
+C 2246 1085 2246 715 2054 421 
+C 1894 159 1645 25 1370 25 
+C 947 25 518 320 403 814 
+C 429 807 480 795 506 795 
+C 589 795 749 840 749 1038 
+C 749 1210 627 1280 506 1280 
+C 358 1280 262 1190 262 1011 
+C 262 454 704 -128 1382 -128 
+C 2042 -128 2669 440 2669 1264 
+C 2669 2030 2170 2624 1549 2624 
+C 1222 2624 947 2503 730 2274 
+L 730 3692 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-35" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_xtick_6">
+     <g id="cpl_6815129ff946_23c695_line2d_11">
+      <path d="M 365.207206 332.446325 
+L 365.207206 17.66264 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_12">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_m0372dbd132" x="365.207206" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_6">
+      <!-- $\mathdefault{6}$ -->
+      <g transform="translate(360.638158 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-36" d="M 678 2176 
+C 678 3690 1395 4032 1811 4032 
+C 1946 4032 2272 4009 2400 3776 
+C 2298 3776 2106 3776 2106 3553 
+C 2106 3381 2246 3323 2336 3323 
+C 2394 3323 2566 3348 2566 3560 
+C 2566 3954 2246 4179 1805 4179 
+C 1043 4179 243 3390 243 1984 
+C 243 253 966 -128 1478 -128 
+C 2099 -128 2688 427 2688 1283 
+C 2688 2081 2170 2662 1517 2662 
+C 1126 2662 838 2407 678 1960 
+L 678 2176 
+z
+M 1478 25 
+C 691 25 691 1200 691 1436 
+C 691 1896 909 2560 1504 2560 
+C 1613 2560 1926 2560 2138 2120 
+C 2253 1870 2253 1609 2253 1289 
+C 2253 944 2253 690 2118 434 
+C 1978 171 1773 25 1478 25 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-36" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_xtick_7">
+     <g id="cpl_6815129ff946_23c695_line2d_13">
+      <path d="M 407.883564 332.446325 
+L 407.883564 17.66264 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_14">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_m0372dbd132" x="407.883564" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_7">
+      <!-- $\mathdefault{7}$ -->
+      <g transform="translate(403.314516 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-37" d="M 2886 3941 
+L 2886 4081 
+L 1382 4081 
+C 634 4081 621 4165 595 4288 
+L 480 4288 
+L 294 3094 
+L 410 3094 
+C 429 3215 474 3540 550 3661 
+C 589 3712 1062 3712 1171 3712 
+L 2579 3712 
+L 1869 2661 
+C 1395 1954 1069 999 1069 165 
+C 1069 89 1069 -128 1299 -128 
+C 1530 -128 1530 89 1530 171 
+L 1530 465 
+C 1530 1508 1709 2196 2003 2636 
+L 2886 3941 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-37" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_xtick_8">
+     <g id="cpl_6815129ff946_23c695_line2d_15">
+      <path d="M 450.559922 332.446325 
+L 450.559922 17.66264 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_16">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_m0372dbd132" x="450.559922" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_8">
+      <!-- $\mathdefault{8}$ -->
+      <g transform="translate(445.990875 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-38" d="M 1741 2264 
+C 2144 2467 2554 2773 2554 3263 
+C 2554 3841 1990 4179 1472 4179 
+C 890 4179 378 3759 378 3180 
+C 378 3021 416 2747 666 2505 
+C 730 2442 998 2251 1171 2130 
+C 883 1983 211 1634 211 934 
+C 211 279 838 -128 1459 -128 
+C 2144 -128 2720 362 2720 1010 
+C 2720 1590 2330 1857 2074 2029 
+L 1741 2264 
+z
+M 902 2822 
+C 851 2854 595 3051 595 3351 
+C 595 3739 998 4032 1459 4032 
+C 1965 4032 2336 3676 2336 3262 
+C 2336 2669 1670 2331 1638 2331 
+C 1632 2331 1626 2331 1574 2370 
+L 902 2822 
+z
+M 2080 1519 
+C 2176 1449 2483 1240 2483 851 
+C 2483 381 2010 25 1472 25 
+C 890 25 448 438 448 940 
+C 448 1443 838 1862 1280 2060 
+L 2080 1519 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-38" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_text_9">
+     <!-- $t / \mathrm{s}$ -->
+     <g transform="translate(469.275763 218.711073) scale(0.2 -0.2)">
+      <defs>
+       <path id="CMMI12-74" d="M 1286 2566 
+L 1875 2566 
+C 1997 2566 2061 2566 2061 2681 
+C 2061 2752 2022 2752 1894 2752 
+L 1331 2752 
+L 1568 3692 
+C 1594 3781 1594 3794 1594 3840 
+C 1594 3943 1510 4000 1427 4000 
+C 1376 4000 1229 3981 1178 3775 
+L 928 2752 
+L 326 2752 
+C 198 2752 141 2752 141 2630 
+C 141 2566 186 2566 307 2566 
+L 877 2566 
+L 454 881 
+C 403 658 384 594 384 511 
+C 384 211 595 -64 954 -64 
+C 1600 -64 1946 868 1946 912 
+C 1946 951 1920 970 1882 970 
+C 1869 970 1843 970 1830 944 
+C 1824 938 1818 931 1773 829 
+C 1638 511 1344 64 973 64 
+C 781 64 768 224 768 364 
+C 768 370 768 492 787 568 
+L 1286 2566 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMMI12-3d" d="M 2746 4562 
+C 2746 4569 2784 4666 2784 4678 
+C 2784 4755 2720 4800 2669 4800 
+C 2637 4800 2579 4800 2528 4659 
+L 384 -1363 
+C 384 -1370 346 -1465 346 -1478 
+C 346 -1555 410 -1600 461 -1600 
+C 499 -1600 557 -1593 602 -1459 
+L 2746 4562 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMR17-73" d="M 1978 2697 
+C 1978 2813 1971 2819 1933 2819 
+C 1907 2819 1901 2813 1824 2717 
+C 1805 2691 1747 2626 1728 2601 
+C 1523 2819 1235 2819 1126 2819 
+C 416 2819 160 2447 160 2076 
+C 160 1498 813 1365 998 1325 
+C 1402 1243 1542 1217 1677 1101 
+C 1760 1025 1901 884 1901 654 
+C 1901 384 1747 38 1158 38 
+C 602 38 403 460 288 1021 
+C 269 1110 269 1117 218 1117 
+C 166 1117 160 1110 160 983 
+L 160 63 
+C 160 -51 166 -58 205 -58 
+C 237 -58 243 -51 275 0 
+C 314 57 410 211 448 276 
+C 576 103 800 -64 1158 -64 
+C 1792 -64 2131 283 2131 784 
+C 2131 1112 1958 1285 1875 1362 
+C 1683 1561 1459 1606 1190 1657 
+C 838 1735 390 1825 390 2217 
+C 390 2383 480 2737 1126 2737 
+C 1811 2737 1850 2094 1862 1888 
+C 1869 1856 1901 1849 1920 1849 
+C 1978 1849 1978 1869 1978 1978 
+L 1978 2697 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-74" transform="scale(0.996264)"/>
+      <use xlink:href="#CMMI12-3d" transform="translate(35.22633 0) scale(0.996264)"/>
+      <use xlink:href="#CMR17-73" transform="translate(84.001249 0) scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_6815129ff946_23c695_matplotlib.axis_2">
+    <g id="cpl_6815129ff946_23c695_ytick_1">
+     <g id="cpl_6815129ff946_23c695_line2d_17">
+      <path d="M 66.472698 300.967956 
+L 493.236281 300.967956 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_18">
+      <defs>
+       <path id="cpl_6815129ff946_23c695_mac78aad510" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_mac78aad510" x="109.149056" y="300.967956" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_10">
+      <!-- $\mathdefault{−4}$ -->
+      <g transform="translate(77.513474 307.886455) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMSY10-0" d="M 4218 1472 
+C 4326 1472 4442 1472 4442 1600 
+C 4442 1728 4326 1728 4218 1728 
+L 755 1728 
+C 646 1728 531 1728 531 1600 
+C 531 1472 646 1472 755 1472 
+L 4218 1472 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMSY10-0" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-34" transform="translate(77.487468 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_ytick_2">
+     <g id="cpl_6815129ff946_23c695_line2d_19">
+      <path d="M 66.472698 269.489588 
+L 493.236281 269.489588 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_20">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_mac78aad510" x="109.149056" y="269.489588" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_11">
+      <!-- $\mathdefault{−3}$ -->
+      <g transform="translate(77.513474 276.408086) scale(0.2 -0.2)">
+       <use xlink:href="#CMSY10-0" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-33" transform="translate(77.487468 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_ytick_3">
+     <g id="cpl_6815129ff946_23c695_line2d_21">
+      <path d="M 66.472698 238.011219 
+L 493.236281 238.011219 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_22">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_mac78aad510" x="109.149056" y="238.011219" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_12">
+      <!-- $\mathdefault{−2}$ -->
+      <g transform="translate(77.513474 244.929718) scale(0.2 -0.2)">
+       <use xlink:href="#CMSY10-0" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-32" transform="translate(77.487468 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_ytick_4">
+     <g id="cpl_6815129ff946_23c695_line2d_23">
+      <path d="M 66.472698 206.532851 
+L 493.236281 206.532851 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_24">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_mac78aad510" x="109.149056" y="206.532851" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_13">
+      <!-- $\mathdefault{−1}$ -->
+      <g transform="translate(77.513474 213.451349) scale(0.2 -0.2)">
+       <use xlink:href="#CMSY10-0" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-31" transform="translate(77.487468 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_ytick_5">
+     <g id="cpl_6815129ff946_23c695_line2d_25">
+      <path d="M 66.472698 143.576114 
+L 493.236281 143.576114 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_26">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_mac78aad510" x="109.149056" y="143.576114" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_14">
+      <!-- $\mathdefault{1}$ -->
+      <g transform="translate(93.010961 150.494612) scale(0.2 -0.2)">
+       <use xlink:href="#CMR17-31" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_ytick_6">
+     <g id="cpl_6815129ff946_23c695_line2d_27">
+      <path d="M 66.472698 112.097746 
+L 493.236281 112.097746 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_28">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_mac78aad510" x="109.149056" y="112.097746" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_15">
+      <!-- $\mathdefault{2}$ -->
+      <g transform="translate(93.010961 119.016244) scale(0.2 -0.2)">
+       <use xlink:href="#CMR17-32" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_ytick_7">
+     <g id="cpl_6815129ff946_23c695_line2d_29">
+      <path d="M 66.472698 80.619377 
+L 493.236281 80.619377 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_30">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_mac78aad510" x="109.149056" y="80.619377" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_16">
+      <!-- $\mathdefault{3}$ -->
+      <g transform="translate(93.010961 87.537875) scale(0.2 -0.2)">
+       <use xlink:href="#CMR17-33" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_ytick_8">
+     <g id="cpl_6815129ff946_23c695_line2d_31">
+      <path d="M 66.472698 49.141009 
+L 493.236281 49.141009 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_6815129ff946_23c695_line2d_32">
+      <g>
+       <use xlink:href="#cpl_6815129ff946_23c695_mac78aad510" x="109.149056" y="49.141009" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_6815129ff946_23c695_text_17">
+      <!-- $\mathdefault{4}$ -->
+      <g transform="translate(93.010961 56.059507) scale(0.2 -0.2)">
+       <use xlink:href="#CMR17-34" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_6815129ff946_23c695_text_18">
+     <!-- $v / (\mathrm{m/s})$ -->
+     <g transform="translate(7.2 12.68132) scale(0.2 -0.2)">
+      <defs>
+       <path id="CMMI12-76" d="M 2925 2389 
+C 2925 2791 2720 2816 2669 2816 
+C 2515 2816 2374 2663 2374 2535 
+C 2374 2459 2419 2414 2445 2389 
+C 2509 2331 2675 2159 2675 1827 
+C 2675 1558 2291 64 1523 64 
+C 1133 64 1056 390 1056 626 
+C 1056 945 1203 1392 1376 1852 
+C 1478 2114 1504 2178 1504 2305 
+C 1504 2574 1312 2816 998 2816 
+C 410 2816 173 1890 173 1839 
+C 173 1814 198 1782 243 1782 
+C 301 1782 307 1807 333 1897 
+C 486 2446 736 2689 979 2689 
+C 1037 2689 1146 2689 1146 2478 
+C 1146 2312 1075 2127 979 1884 
+C 672 1067 672 869 672 715 
+C 672 575 691 313 890 134 
+C 1120 -64 1440 -64 1498 -64 
+C 2560 -64 2925 2024 2925 2389 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMR17-28" d="M 1958 -1561 
+C 1958 -1555 1958 -1542 1939 -1523 
+C 1645 -1224 858 -407 858 1581 
+C 858 3569 1632 4379 1946 4697 
+C 1946 4704 1958 4717 1958 4736 
+C 1958 4755 1939 4768 1914 4768 
+C 1843 4768 1299 4296 986 3594 
+C 666 2887 576 2199 576 1588 
+C 576 1128 621 351 1005 -471 
+C 1312 -1135 1837 -1600 1914 -1600 
+C 1946 -1600 1958 -1587 1958 -1561 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMR17-6d" d="M 4326 1933 
+C 4326 2252 4269 2790 3507 2790 
+C 3072 2790 2771 2496 2656 2151 
+L 2650 2151 
+C 2573 2676 2195 2790 1837 2790 
+C 1331 2790 1069 2400 973 2144 
+L 966 2144 
+L 966 2790 
+L 211 2720 
+L 211 2554 
+C 589 2554 646 2515 646 2208 
+L 646 428 
+C 646 184 621 153 211 153 
+L 211 -13 
+C 365 0 646 0 813 0 
+C 979 0 1267 0 1421 -13 
+L 1421 153 
+C 1011 153 986 178 986 428 
+L 986 1658 
+C 986 2247 1344 2688 1792 2688 
+C 2266 2688 2317 2266 2317 1958 
+L 2317 428 
+C 2317 184 2291 153 1882 153 
+L 1882 -13 
+C 2035 0 2317 0 2483 0 
+C 2650 0 2938 0 3091 -13 
+L 3091 153 
+C 2682 153 2656 178 2656 428 
+L 2656 1658 
+C 2656 2247 3014 2688 3462 2688 
+C 3936 2688 3987 2266 3987 1958 
+L 3987 428 
+C 3987 184 3962 153 3552 153 
+L 3552 -13 
+C 3706 0 3987 0 4154 0 
+C 4320 0 4608 0 4762 -13 
+L 4762 153 
+C 4352 153 4326 178 4326 428 
+L 4326 1933 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMR17-29" d="M 1683 1581 
+C 1683 2040 1638 2817 1254 3639 
+C 947 4303 422 4768 346 4768 
+C 326 4768 301 4761 301 4729 
+C 301 4717 307 4710 314 4697 
+C 621 4378 1402 3568 1402 1584 
+C 1402 -407 627 -1217 314 -1537 
+C 307 -1549 301 -1556 301 -1568 
+C 301 -1600 326 -1600 346 -1600 
+C 416 -1600 960 -1128 1274 -426 
+C 1594 281 1683 969 1683 1581 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-76" transform="scale(0.996264)"/>
+      <use xlink:href="#CMMI12-3d" transform="translate(50.735173 0) scale(0.996264)"/>
+      <use xlink:href="#CMR17-28" transform="translate(99.510092 0) scale(0.996264)"/>
+      <use xlink:href="#CMR17-6d" transform="translate(134.79086 0) scale(0.996264)"/>
+      <use xlink:href="#CMMI12-3d" transform="translate(211.71045 0) scale(0.996264)"/>
+      <use xlink:href="#CMR17-73" transform="translate(260.485369 0) scale(0.996264)"/>
+      <use xlink:href="#CMR17-29" transform="translate(296.286706 0) scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_6815129ff946_23c695_line2d_33">
+    <defs>
+     <path id="cpl_6815129ff946_23c695_m8acb7d3318" d="M 3 0 
+L -3 -3 
+L -3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_6815129ff946_23c695_m8acb7d3318" x="493.236281" y="175.054483" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_6815129ff946_23c695_line2d_34">
+    <defs>
+     <path id="cpl_6815129ff946_23c695_m639ae982bf" d="M 0 -3 
+L -3 3 
+L 3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_6815129ff946_23c695_m639ae982bf" x="109.149056" y="17.66264" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_6815129ff946_23c695_line2d_35">
+    <path d="M 109.149056 300.967956 
+L 450.559922 49.141009 
+L 450.559922 49.141009 
+" clip-path="url(#cpl_6815129ff946_23c695_p75d55a488b)" style="fill: none; stroke: #0072b2; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_6815129ff946_23c695_patch_3">
+    <path d="M 109.149056 332.446325 
+L 109.149056 17.66264 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_6815129ff946_23c695_patch_4">
+    <path d="M 493.236281 332.446325 
+L 493.236281 17.66264 
+" style="fill: none"/>
+   </g>
+   <g id="cpl_6815129ff946_23c695_patch_5">
+    <path d="M 66.472698 175.054483 
+L 493.236281 175.054483 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_6815129ff946_23c695_patch_6">
+    <path d="M 66.472698 17.66264 
+L 493.236281 17.66264 
+" style="fill: none"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="cpl_6815129ff946_23c695_p75d55a488b">
+   <rect x="66.472698" y="17.66264" width="426.763583" height="314.783685"/>
+  </clipPath>
+ </defs>
+</svg>
+</div></figure>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+a</label><div class="sd-tab-content docutils">
+<p>Bestem sluttposisjonen til gjenstanden ved regning (for hånd!).</p>
+</div>
+<input id="sd-tab-item-12" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+b</label><div class="sd-tab-content docutils">
+<p>Fyll ut formlene som mangler i programmet nedenfor og kjør programmet.</p>
+<p>Hva forteller utskriften om bevegelsen?</p>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+c</label><div class="sd-tab-content docutils">
+<p>Prøv å endre på verdien til bredden <code class="code docutils literal highlight highlight-python"><span class="n">dt</span></code> slik at du bruker flere rektangler.</p>
+<p>Hva skjer med verdien som skrives ut av programmet?</p>
+</div>
+</div>
+
+        <div id="container-code-06bd47a0"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`s = 0 # startposisjon i meter
+t = 0 # starttid i sekunder
+dt = 0.1 # bredde på rektangler i sekunder
+
+while t < 8: # regn ut posisjonen over 8 sekunder
+    v = # FYLL INN
+    s = # FYLL INN
+
+    t = t + dt # Gå videre til neste tidpunkt
+
+
+print(s)`;
+
+                makeInteractiveCode(
+                    "container-code-06bd47a0",
+                    code,
+                );
+            });
+        </script>
+        </div>
+<hr class="docutils" />
+<div class="admonition exercise">
+<p class="admonition-title">Oppgave 5</p>
+<p>I figuren nedenfor vises fartsgrafen til ball som kastet rett opp i luften før den faller ned igjen og treffer bakken.</p>
+<p>Startposisjonen til ballen er <span class="math notranslate nohighlight">\(s = 2 \, \mathrm{m}\)</span> over bakken. Funksjonsuttrykket til farten (i m/s) er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+v(t) = -9.81 t + 50
+\]</div>
+<figure class="adaptive-figure plot-figure no-click align-center">
+<div class="graph-image no-click no-scaled-link"><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 505.854515 339.646325" xmlns="http://www.w3.org/2000/svg" version="1.1" class="graph-inline-svg" role="img" aria-label="Tilpasset figur" style="width:80%; height:auto; display:block; margin:0 auto;"><title>Tilpasset\ figur</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2025-08-30T14:39:25.798629</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="cpl_e5745be0f1aa_1439fd_figure_1">
+  <g id="cpl_e5745be0f1aa_1439fd_patch_1">
+   <path d="M 0 339.646325 
+L 505.854515 339.646325 
+L 505.854515 0 
+L 0 0 
+L 0 339.646325 
+z
+" style="fill: none"/>
+  </g>
+  <g id="cpl_e5745be0f1aa_1439fd_axes_1">
+   <g id="cpl_e5745be0f1aa_1439fd_patch_2">
+    <path d="M 83.981028 332.446325 
+L 495.654515 332.446325 
+L 495.654515 17.66264 
+L 83.981028 17.66264 
+L 83.981028 332.446325 
+z
+" style="fill: none"/>
+   </g>
+   <g id="cpl_e5745be0f1aa_1439fd_matplotlib.axis_1">
+    <g id="cpl_e5745be0f1aa_1439fd_xtick_1">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_1">
+      <path d="M 152.593276 332.446325 
+L 152.593276 17.66264 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_2">
+      <defs>
+       <path id="cpl_e5745be0f1aa_1439fd_mbb20d1516e" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mbb20d1516e" x="152.593276" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_1">
+      <!-- $\mathdefault{1}$ -->
+      <g transform="translate(148.024228 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-31" d="M 1702 4058 
+C 1702 4192 1696 4192 1606 4192 
+C 1357 3916 979 3827 621 3827 
+C 602 3827 570 3827 563 3808 
+C 557 3795 557 3782 557 3648 
+C 755 3648 1088 3686 1344 3839 
+L 1344 461 
+C 1344 236 1331 160 781 160 
+L 589 160 
+L 589 0 
+C 896 0 1216 0 1523 0 
+C 1830 0 2150 0 2458 0 
+L 2458 160 
+L 2266 160 
+C 1715 160 1702 230 1702 458 
+L 1702 4058 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-31" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_xtick_2">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_3">
+      <path d="M 186.8994 332.446325 
+L 186.8994 17.66264 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_4">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mbb20d1516e" x="186.8994" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_2">
+      <!-- $\mathdefault{2}$ -->
+      <g transform="translate(182.330352 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-32" d="M 2669 989 
+L 2554 989 
+C 2490 536 2438 459 2413 420 
+C 2381 369 1920 369 1830 369 
+L 602 369 
+C 832 619 1280 1072 1824 1597 
+C 2214 1967 2669 2402 2669 3035 
+C 2669 3790 2067 4224 1395 4224 
+C 691 4224 262 3604 262 3030 
+C 262 2780 448 2748 525 2748 
+C 589 2748 781 2787 781 3010 
+C 781 3207 614 3264 525 3264 
+C 486 3264 448 3258 422 3245 
+C 544 3790 915 4058 1306 4058 
+C 1862 4058 2227 3617 2227 3035 
+C 2227 2479 1901 2000 1536 1584 
+L 262 146 
+L 262 0 
+L 2515 0 
+L 2669 989 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-32" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_xtick_3">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_5">
+      <path d="M 221.205524 332.446325 
+L 221.205524 17.66264 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_6">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mbb20d1516e" x="221.205524" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_3">
+      <!-- $\mathdefault{3}$ -->
+      <g transform="translate(216.636476 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-33" d="M 1414 2157 
+C 1984 2157 2234 1662 2234 1090 
+C 2234 320 1824 25 1453 25 
+C 1114 25 563 194 390 693 
+C 422 680 454 680 486 680 
+C 640 680 755 782 755 948 
+C 755 1133 614 1216 486 1216 
+C 378 1216 211 1165 211 926 
+C 211 335 787 -128 1466 -128 
+C 2176 -128 2720 430 2720 1085 
+C 2720 1707 2208 2157 1600 2227 
+C 2086 2328 2554 2756 2554 3329 
+C 2554 3820 2048 4179 1472 4179 
+C 890 4179 378 3829 378 3329 
+C 378 3110 544 3072 627 3072 
+C 762 3072 877 3155 877 3321 
+C 877 3486 762 3569 627 3569 
+C 602 3569 570 3569 544 3557 
+C 730 3959 1235 4032 1459 4032 
+C 1683 4032 2106 3925 2106 3320 
+C 2106 3143 2080 2828 1862 2550 
+C 1670 2304 1453 2304 1242 2284 
+C 1210 2284 1062 2269 1037 2269 
+C 992 2263 966 2257 966 2208 
+C 966 2163 973 2157 1101 2157 
+L 1414 2157 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-33" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_xtick_4">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_7">
+      <path d="M 255.511648 332.446325 
+L 255.511648 17.66264 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_8">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mbb20d1516e" x="255.511648" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_4">
+      <!-- $\mathdefault{4}$ -->
+      <g transform="translate(250.9426 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-34" d="M 2150 4122 
+C 2150 4256 2144 4256 2029 4256 
+L 128 1254 
+L 128 1088 
+L 1779 1088 
+L 1779 457 
+C 1779 224 1766 160 1318 160 
+L 1197 160 
+L 1197 0 
+C 1402 0 1747 0 1965 0 
+C 2182 0 2528 0 2733 0 
+L 2733 160 
+L 2611 160 
+C 2163 160 2150 224 2150 457 
+L 2150 1088 
+L 2803 1088 
+L 2803 1254 
+L 2150 1254 
+L 2150 4122 
+z
+M 1798 3703 
+L 1798 1254 
+L 256 1254 
+L 1798 3703 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-34" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_xtick_5">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_9">
+      <path d="M 289.817771 332.446325 
+L 289.817771 17.66264 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_10">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mbb20d1516e" x="289.817771" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_5">
+      <!-- $\mathdefault{5}$ -->
+      <g transform="translate(285.248724 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-35" d="M 730 3692 
+C 794 3666 1056 3584 1325 3584 
+C 1920 3584 2246 3911 2432 4100 
+C 2432 4157 2432 4192 2394 4192 
+C 2387 4192 2374 4192 2323 4163 
+C 2099 4058 1837 3973 1517 3973 
+C 1325 3973 1037 3999 723 4139 
+C 653 4171 640 4171 634 4171 
+C 602 4171 595 4164 595 4037 
+L 595 2203 
+C 595 2089 595 2057 659 2057 
+C 691 2057 704 2070 736 2114 
+C 941 2401 1222 2522 1542 2522 
+C 1766 2522 2246 2382 2246 1289 
+C 2246 1085 2246 715 2054 421 
+C 1894 159 1645 25 1370 25 
+C 947 25 518 320 403 814 
+C 429 807 480 795 506 795 
+C 589 795 749 840 749 1038 
+C 749 1210 627 1280 506 1280 
+C 358 1280 262 1190 262 1011 
+C 262 454 704 -128 1382 -128 
+C 2042 -128 2669 440 2669 1264 
+C 2669 2030 2170 2624 1549 2624 
+C 1222 2624 947 2503 730 2274 
+L 730 3692 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-35" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_xtick_6">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_11">
+      <path d="M 324.123895 332.446325 
+L 324.123895 17.66264 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_12">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mbb20d1516e" x="324.123895" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_6">
+      <!-- $\mathdefault{6}$ -->
+      <g transform="translate(319.554848 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-36" d="M 678 2176 
+C 678 3690 1395 4032 1811 4032 
+C 1946 4032 2272 4009 2400 3776 
+C 2298 3776 2106 3776 2106 3553 
+C 2106 3381 2246 3323 2336 3323 
+C 2394 3323 2566 3348 2566 3560 
+C 2566 3954 2246 4179 1805 4179 
+C 1043 4179 243 3390 243 1984 
+C 243 253 966 -128 1478 -128 
+C 2099 -128 2688 427 2688 1283 
+C 2688 2081 2170 2662 1517 2662 
+C 1126 2662 838 2407 678 1960 
+L 678 2176 
+z
+M 1478 25 
+C 691 25 691 1200 691 1436 
+C 691 1896 909 2560 1504 2560 
+C 1613 2560 1926 2560 2138 2120 
+C 2253 1870 2253 1609 2253 1289 
+C 2253 944 2253 690 2118 434 
+C 1978 171 1773 25 1478 25 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-36" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_xtick_7">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_13">
+      <path d="M 358.430019 332.446325 
+L 358.430019 17.66264 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_14">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mbb20d1516e" x="358.430019" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_7">
+      <!-- $\mathdefault{7}$ -->
+      <g transform="translate(353.860972 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-37" d="M 2886 3941 
+L 2886 4081 
+L 1382 4081 
+C 634 4081 621 4165 595 4288 
+L 480 4288 
+L 294 3094 
+L 410 3094 
+C 429 3215 474 3540 550 3661 
+C 589 3712 1062 3712 1171 3712 
+L 2579 3712 
+L 1869 2661 
+C 1395 1954 1069 999 1069 165 
+C 1069 89 1069 -128 1299 -128 
+C 1530 -128 1530 89 1530 171 
+L 1530 465 
+C 1530 1508 1709 2196 2003 2636 
+L 2886 3941 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-37" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_xtick_8">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_15">
+      <path d="M 392.736143 332.446325 
+L 392.736143 17.66264 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_16">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mbb20d1516e" x="392.736143" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_8">
+      <!-- $\mathdefault{8}$ -->
+      <g transform="translate(388.167096 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-38" d="M 1741 2264 
+C 2144 2467 2554 2773 2554 3263 
+C 2554 3841 1990 4179 1472 4179 
+C 890 4179 378 3759 378 3180 
+C 378 3021 416 2747 666 2505 
+C 730 2442 998 2251 1171 2130 
+C 883 1983 211 1634 211 934 
+C 211 279 838 -128 1459 -128 
+C 2144 -128 2720 362 2720 1010 
+C 2720 1590 2330 1857 2074 2029 
+L 1741 2264 
+z
+M 902 2822 
+C 851 2854 595 3051 595 3351 
+C 595 3739 998 4032 1459 4032 
+C 1965 4032 2336 3676 2336 3262 
+C 2336 2669 1670 2331 1638 2331 
+C 1632 2331 1626 2331 1574 2370 
+L 902 2822 
+z
+M 2080 1519 
+C 2176 1449 2483 1240 2483 851 
+C 2483 381 2010 25 1472 25 
+C 890 25 448 438 448 940 
+C 448 1443 838 1862 1280 2060 
+L 2080 1519 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-38" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_xtick_9">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_17">
+      <path d="M 427.042267 332.446325 
+L 427.042267 17.66264 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_18">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mbb20d1516e" x="427.042267" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_9">
+      <!-- $\mathdefault{9}$ -->
+      <g transform="translate(422.473219 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-39" d="M 2253 1864 
+C 2253 464 1670 31 1190 31 
+C 1043 31 685 31 538 294 
+C 704 268 826 357 826 518 
+C 826 692 685 749 595 749 
+C 538 749 365 723 365 506 
+C 365 71 742 -128 1203 -128 
+C 1939 -128 2688 674 2688 2073 
+C 2688 3817 1971 4179 1485 4179 
+C 851 4179 243 3628 243 2778 
+C 243 1991 762 1408 1414 1408 
+C 1952 1408 2189 1903 2253 2112 
+L 2253 1864 
+z
+M 1427 1510 
+C 1254 1510 1011 1542 813 1922 
+C 678 2169 678 2461 678 2771 
+C 678 3146 678 3405 858 3684 
+C 947 3817 1114 4032 1485 4032 
+C 2240 4032 2240 2885 2240 2632 
+C 2240 2182 2035 1510 1427 1510 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-39" transform="scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_xtick_10">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_19">
+      <path d="M 461.348391 332.446325 
+L 461.348391 17.66264 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_20">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mbb20d1516e" x="461.348391" y="175.054483" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_10">
+      <!-- $\mathdefault{10}$ -->
+      <g transform="translate(452.210296 195.891479) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMR17-30" d="M 2688 2025 
+C 2688 2416 2682 3080 2413 3591 
+C 2176 4039 1798 4198 1466 4198 
+C 1158 4198 768 4058 525 3597 
+C 269 3118 243 2524 243 2025 
+C 243 1661 250 1106 448 619 
+C 723 -39 1216 -128 1466 -128 
+C 1760 -128 2208 -7 2470 600 
+C 2662 1042 2688 1559 2688 2025 
+z
+M 1466 -26 
+C 1056 -26 813 325 723 812 
+C 653 1188 653 1738 653 2096 
+C 653 2588 653 2997 736 3387 
+C 858 3929 1216 4096 1466 4096 
+C 1728 4096 2067 3923 2189 3400 
+C 2272 3036 2278 2607 2278 2096 
+C 2278 1680 2278 1169 2202 792 
+C 2067 95 1690 -26 1466 -26 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMR17-31" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-30" transform="translate(45.690477 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_text_11">
+     <!-- $t / \mathrm{s}$ -->
+     <g transform="translate(471.693998 218.711073) scale(0.2 -0.2)">
+      <defs>
+       <path id="CMMI12-74" d="M 1286 2566 
+L 1875 2566 
+C 1997 2566 2061 2566 2061 2681 
+C 2061 2752 2022 2752 1894 2752 
+L 1331 2752 
+L 1568 3692 
+C 1594 3781 1594 3794 1594 3840 
+C 1594 3943 1510 4000 1427 4000 
+C 1376 4000 1229 3981 1178 3775 
+L 928 2752 
+L 326 2752 
+C 198 2752 141 2752 141 2630 
+C 141 2566 186 2566 307 2566 
+L 877 2566 
+L 454 881 
+C 403 658 384 594 384 511 
+C 384 211 595 -64 954 -64 
+C 1600 -64 1946 868 1946 912 
+C 1946 951 1920 970 1882 970 
+C 1869 970 1843 970 1830 944 
+C 1824 938 1818 931 1773 829 
+C 1638 511 1344 64 973 64 
+C 781 64 768 224 768 364 
+C 768 370 768 492 787 568 
+L 1286 2566 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMMI12-3d" d="M 2746 4562 
+C 2746 4569 2784 4666 2784 4678 
+C 2784 4755 2720 4800 2669 4800 
+C 2637 4800 2579 4800 2528 4659 
+L 384 -1363 
+C 384 -1370 346 -1465 346 -1478 
+C 346 -1555 410 -1600 461 -1600 
+C 499 -1600 557 -1593 602 -1459 
+L 2746 4562 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMR17-73" d="M 1978 2697 
+C 1978 2813 1971 2819 1933 2819 
+C 1907 2819 1901 2813 1824 2717 
+C 1805 2691 1747 2626 1728 2601 
+C 1523 2819 1235 2819 1126 2819 
+C 416 2819 160 2447 160 2076 
+C 160 1498 813 1365 998 1325 
+C 1402 1243 1542 1217 1677 1101 
+C 1760 1025 1901 884 1901 654 
+C 1901 384 1747 38 1158 38 
+C 602 38 403 460 288 1021 
+C 269 1110 269 1117 218 1117 
+C 166 1117 160 1110 160 983 
+L 160 63 
+C 160 -51 166 -58 205 -58 
+C 237 -58 243 -51 275 0 
+C 314 57 410 211 448 276 
+C 576 103 800 -64 1158 -64 
+C 1792 -64 2131 283 2131 784 
+C 2131 1112 1958 1285 1875 1362 
+C 1683 1561 1459 1606 1190 1657 
+C 838 1735 390 1825 390 2217 
+C 390 2383 480 2737 1126 2737 
+C 1811 2737 1850 2094 1862 1888 
+C 1869 1856 1901 1849 1920 1849 
+C 1978 1849 1978 1869 1978 1978 
+L 1978 2697 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-74" transform="scale(0.996264)"/>
+      <use xlink:href="#CMMI12-3d" transform="translate(35.22633 0) scale(0.996264)"/>
+      <use xlink:href="#CMR17-73" transform="translate(84.001249 0) scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_e5745be0f1aa_1439fd_matplotlib.axis_2">
+    <g id="cpl_e5745be0f1aa_1439fd_ytick_1">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_21">
+      <path d="M 83.981028 306.214351 
+L 495.654515 306.214351 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_22">
+      <defs>
+       <path id="cpl_e5745be0f1aa_1439fd_mda7567631f" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mda7567631f" x="118.287152" y="306.214351" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_12">
+      <!-- $\mathdefault{−50}$ -->
+      <g transform="translate(77.513474 313.13285) scale(0.2 -0.2)">
+       <defs>
+        <path id="CMSY10-0" d="M 4218 1472 
+C 4326 1472 4442 1472 4442 1600 
+C 4442 1728 4326 1728 4218 1728 
+L 755 1728 
+C 646 1728 531 1728 531 1600 
+C 531 1472 646 1472 755 1472 
+L 4218 1472 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#CMSY10-0" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-35" transform="translate(77.487468 0) scale(0.996264)"/>
+       <use xlink:href="#CMR17-30" transform="translate(123.177945 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_ytick_2">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_23">
+      <path d="M 83.981028 279.982377 
+L 495.654515 279.982377 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_24">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mda7567631f" x="118.287152" y="279.982377" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_13">
+      <!-- $\mathdefault{−40}$ -->
+      <g transform="translate(77.513474 286.900876) scale(0.2 -0.2)">
+       <use xlink:href="#CMSY10-0" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-34" transform="translate(77.487468 0) scale(0.996264)"/>
+       <use xlink:href="#CMR17-30" transform="translate(123.177945 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_ytick_3">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_25">
+      <path d="M 83.981028 253.750404 
+L 495.654515 253.750404 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_26">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mda7567631f" x="118.287152" y="253.750404" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_14">
+      <!-- $\mathdefault{−30}$ -->
+      <g transform="translate(77.513474 260.668902) scale(0.2 -0.2)">
+       <use xlink:href="#CMSY10-0" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-33" transform="translate(77.487468 0) scale(0.996264)"/>
+       <use xlink:href="#CMR17-30" transform="translate(123.177945 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_ytick_4">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_27">
+      <path d="M 83.981028 227.51843 
+L 495.654515 227.51843 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_28">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mda7567631f" x="118.287152" y="227.51843" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_15">
+      <!-- $\mathdefault{−20}$ -->
+      <g transform="translate(77.513474 234.436928) scale(0.2 -0.2)">
+       <use xlink:href="#CMSY10-0" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-32" transform="translate(77.487468 0) scale(0.996264)"/>
+       <use xlink:href="#CMR17-30" transform="translate(123.177945 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_ytick_5">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_29">
+      <path d="M 83.981028 201.286456 
+L 495.654515 201.286456 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_30">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mda7567631f" x="118.287152" y="201.286456" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_16">
+      <!-- $\mathdefault{−10}$ -->
+      <g transform="translate(77.513474 208.204955) scale(0.2 -0.2)">
+       <use xlink:href="#CMSY10-0" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-31" transform="translate(77.487468 0) scale(0.996264)"/>
+       <use xlink:href="#CMR17-30" transform="translate(123.177945 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_ytick_6">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_31">
+      <path d="M 83.981028 148.822509 
+L 495.654515 148.822509 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_32">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mda7567631f" x="118.287152" y="148.822509" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_17">
+      <!-- $\mathdefault{10}$ -->
+      <g transform="translate(93.010961 155.741007) scale(0.2 -0.2)">
+       <use xlink:href="#CMR17-31" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-30" transform="translate(45.690477 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_ytick_7">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_33">
+      <path d="M 83.981028 122.590535 
+L 495.654515 122.590535 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_34">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mda7567631f" x="118.287152" y="122.590535" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_18">
+      <!-- $\mathdefault{20}$ -->
+      <g transform="translate(93.010961 129.509033) scale(0.2 -0.2)">
+       <use xlink:href="#CMR17-32" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-30" transform="translate(45.690477 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_ytick_8">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_35">
+      <path d="M 83.981028 96.358561 
+L 495.654515 96.358561 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_36">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mda7567631f" x="118.287152" y="96.358561" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_19">
+      <!-- $\mathdefault{30}$ -->
+      <g transform="translate(93.010961 103.27706) scale(0.2 -0.2)">
+       <use xlink:href="#CMR17-33" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-30" transform="translate(45.690477 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_ytick_9">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_37">
+      <path d="M 83.981028 70.126588 
+L 495.654515 70.126588 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_38">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mda7567631f" x="118.287152" y="70.126588" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_20">
+      <!-- $\mathdefault{40}$ -->
+      <g transform="translate(93.010961 77.045086) scale(0.2 -0.2)">
+       <use xlink:href="#CMR17-34" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-30" transform="translate(45.690477 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_ytick_10">
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_39">
+      <path d="M 83.981028 43.894614 
+L 495.654515 43.894614 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke-dasharray: 2.96,1.28; stroke-dashoffset: 0; stroke: #b0b0b0; stroke-opacity: 0.6; stroke-width: 0.8"/>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_line2d_40">
+      <g>
+       <use xlink:href="#cpl_e5745be0f1aa_1439fd_mda7567631f" x="118.287152" y="43.894614" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="cpl_e5745be0f1aa_1439fd_text_21">
+      <!-- $\mathdefault{50}$ -->
+      <g transform="translate(93.010961 50.813112) scale(0.2 -0.2)">
+       <use xlink:href="#CMR17-35" transform="scale(0.996264)"/>
+       <use xlink:href="#CMR17-30" transform="translate(45.690477 0) scale(0.996264)"/>
+      </g>
+     </g>
+    </g>
+    <g id="cpl_e5745be0f1aa_1439fd_text_22">
+     <!-- $v / (\mathrm{m/s})$ -->
+     <g transform="translate(7.2 12.68132) scale(0.2 -0.2)">
+      <defs>
+       <path id="CMMI12-76" d="M 2925 2389 
+C 2925 2791 2720 2816 2669 2816 
+C 2515 2816 2374 2663 2374 2535 
+C 2374 2459 2419 2414 2445 2389 
+C 2509 2331 2675 2159 2675 1827 
+C 2675 1558 2291 64 1523 64 
+C 1133 64 1056 390 1056 626 
+C 1056 945 1203 1392 1376 1852 
+C 1478 2114 1504 2178 1504 2305 
+C 1504 2574 1312 2816 998 2816 
+C 410 2816 173 1890 173 1839 
+C 173 1814 198 1782 243 1782 
+C 301 1782 307 1807 333 1897 
+C 486 2446 736 2689 979 2689 
+C 1037 2689 1146 2689 1146 2478 
+C 1146 2312 1075 2127 979 1884 
+C 672 1067 672 869 672 715 
+C 672 575 691 313 890 134 
+C 1120 -64 1440 -64 1498 -64 
+C 2560 -64 2925 2024 2925 2389 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMR17-28" d="M 1958 -1561 
+C 1958 -1555 1958 -1542 1939 -1523 
+C 1645 -1224 858 -407 858 1581 
+C 858 3569 1632 4379 1946 4697 
+C 1946 4704 1958 4717 1958 4736 
+C 1958 4755 1939 4768 1914 4768 
+C 1843 4768 1299 4296 986 3594 
+C 666 2887 576 2199 576 1588 
+C 576 1128 621 351 1005 -471 
+C 1312 -1135 1837 -1600 1914 -1600 
+C 1946 -1600 1958 -1587 1958 -1561 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMR17-6d" d="M 4326 1933 
+C 4326 2252 4269 2790 3507 2790 
+C 3072 2790 2771 2496 2656 2151 
+L 2650 2151 
+C 2573 2676 2195 2790 1837 2790 
+C 1331 2790 1069 2400 973 2144 
+L 966 2144 
+L 966 2790 
+L 211 2720 
+L 211 2554 
+C 589 2554 646 2515 646 2208 
+L 646 428 
+C 646 184 621 153 211 153 
+L 211 -13 
+C 365 0 646 0 813 0 
+C 979 0 1267 0 1421 -13 
+L 1421 153 
+C 1011 153 986 178 986 428 
+L 986 1658 
+C 986 2247 1344 2688 1792 2688 
+C 2266 2688 2317 2266 2317 1958 
+L 2317 428 
+C 2317 184 2291 153 1882 153 
+L 1882 -13 
+C 2035 0 2317 0 2483 0 
+C 2650 0 2938 0 3091 -13 
+L 3091 153 
+C 2682 153 2656 178 2656 428 
+L 2656 1658 
+C 2656 2247 3014 2688 3462 2688 
+C 3936 2688 3987 2266 3987 1958 
+L 3987 428 
+C 3987 184 3962 153 3552 153 
+L 3552 -13 
+C 3706 0 3987 0 4154 0 
+C 4320 0 4608 0 4762 -13 
+L 4762 153 
+C 4352 153 4326 178 4326 428 
+L 4326 1933 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMR17-29" d="M 1683 1581 
+C 1683 2040 1638 2817 1254 3639 
+C 947 4303 422 4768 346 4768 
+C 326 4768 301 4761 301 4729 
+C 301 4717 307 4710 314 4697 
+C 621 4378 1402 3568 1402 1584 
+C 1402 -407 627 -1217 314 -1537 
+C 307 -1549 301 -1556 301 -1568 
+C 301 -1600 326 -1600 346 -1600 
+C 416 -1600 960 -1128 1274 -426 
+C 1594 281 1683 969 1683 1581 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-76" transform="scale(0.996264)"/>
+      <use xlink:href="#CMMI12-3d" transform="translate(50.735173 0) scale(0.996264)"/>
+      <use xlink:href="#CMR17-28" transform="translate(99.510092 0) scale(0.996264)"/>
+      <use xlink:href="#CMR17-6d" transform="translate(134.79086 0) scale(0.996264)"/>
+      <use xlink:href="#CMMI12-3d" transform="translate(211.71045 0) scale(0.996264)"/>
+      <use xlink:href="#CMR17-73" transform="translate(260.485369 0) scale(0.996264)"/>
+      <use xlink:href="#CMR17-29" transform="translate(296.286706 0) scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_e5745be0f1aa_1439fd_line2d_41">
+    <defs>
+     <path id="cpl_e5745be0f1aa_1439fd_m5e2fc0a6d0" d="M 3 0 
+L -3 -3 
+L -3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_e5745be0f1aa_1439fd_m5e2fc0a6d0" x="495.654515" y="175.054483" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_e5745be0f1aa_1439fd_line2d_42">
+    <defs>
+     <path id="cpl_e5745be0f1aa_1439fd_m1e0ab233a5" d="M 0 -3 
+L -3 3 
+L 3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_e5745be0f1aa_1439fd_m1e0ab233a5" x="118.287152" y="17.66264" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_e5745be0f1aa_1439fd_line2d_43">
+    <path d="M 118.287152 43.894614 
+L 469.2388 307.148996 
+L 469.2388 307.148996 
+" clip-path="url(#cpl_e5745be0f1aa_1439fd_p02df8347bb)" style="fill: none; stroke: #0072b2; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_e5745be0f1aa_1439fd_patch_3">
+    <path d="M 118.287152 332.446325 
+L 118.287152 17.66264 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_e5745be0f1aa_1439fd_patch_4">
+    <path d="M 495.654515 332.446325 
+L 495.654515 17.66264 
+" style="fill: none"/>
+   </g>
+   <g id="cpl_e5745be0f1aa_1439fd_patch_5">
+    <path d="M 83.981028 175.054483 
+L 495.654515 175.054483 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_e5745be0f1aa_1439fd_patch_6">
+    <path d="M 83.981028 17.66264 
+L 495.654515 17.66264 
+" style="fill: none"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="cpl_e5745be0f1aa_1439fd_p02df8347bb">
+   <rect x="83.981028" y="17.66264" width="411.673487" height="314.783685"/>
+  </clipPath>
+ </defs>
+</svg>
+</div></figure>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+a</label><div class="sd-tab-content docutils">
+<p>Lag en grov skisse av posisjonsgrafen til ballen.</p>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+b</label><div class="sd-tab-content docutils">
+<p>Du vil se noen nye kodelinjer i programmet nedenfor som er forklart med kommentarer. Du trenger ikke tenke så mye over disse utover at å forstå hva rollen deres er.</p>
+<p>Fyll ut koden som mangler og kjør programmet. Sammenlign grafen din med skissa du tegnet i oppgave <strong>a</strong>.</p>
+
+        <div id="container-code-9b841b2b"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`tid = [] # liste som skal lagre tidspunkter
+posisjon = [] # liste som skal lagre posisjoner
+
+s = ???? # FYLL INN startposisjonen i meter
+t = ???? # FYLL INN: starttiden i sekunder
+dt = ???? # FYLL INN: velg bredde på rektanglene
+
+while ????: # FYLL INN: Kjør løkka så lenge ballen er over bakken
+    tid.append(t) # Legger til nåværende tid i lista
+    posisjon.append(s) # Legger til nåværende posisjon i lista
+
+    v = ???? # FYLL INN: formel for farten
+    s = ???? # FYLL INN: regn ut neste posisjon
+
+    t = ???? # FYLL INN: gå videre til neste tidpunkt
+
+
+
+# Tegner posisjonsgrafen ut ifra beregningene ovenfor
+import plotmath
+plotmath.plot(
+    xdata=tid,
+    ydata=posisjon,
+    xlabel="\$t\$ / s",
+    ylabel="\$s\$ / m",
+)
+plotmath.show()
+plotmath.close()
+`;
+
+                makeInteractiveCode(
+                    "container-code-9b841b2b",
+                    code,
+                );
+            });
+        </script>
+        </div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="admonition exercise">
+<p class="admonition-title">Oppgave 6</p>
+<p>Farten <span class="math notranslate nohighlight">\(v(t)\)</span> i m/s til en radiostyrt bil som kjører langs en rett linje er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+v(t) =  \dfrac{1}{2}t^2 - 3t + 4 \qfor t \in [0, 6] \, \mathrm{s}
+\]</div>
+<p>Vi antar at startposisjonen er <span class="math notranslate nohighlight">\(s = 0 \, \mathrm{m}\)</span>.</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+a</label><div class="sd-tab-content docutils">
+<p>Fyll ut programmet nedenfor og tegn posisjonsgrafen til bilen.</p>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+b</label><div class="sd-tab-content docutils">
+<p>Hva er sluttposisjonen til bilen, ifølge fartsgrafen din?</p>
+</div>
+<input id="sd-tab-item-18" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-18">
+c</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Når kjører bilen fremover?</p></li>
+<li><p>Når rygger bilen?</p></li>
+<li><p>Når stopper bilen helt opp?</p></li>
+</ol>
+<blockquote>
+<div><p>Det holder med omtrentlige verdier!</p>
+</div></blockquote>
+</div>
+</div>
+
+        <div id="container-code-a7d45ed3"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`tid = [] # liste som skal lagre tidspunkter
+posisjon = [] # liste som skal lagre posisjoner
+
+s = ???? # FYLL INN startposisjonen i meter
+t = ???? # FYLL INN: starttiden i sekunder
+dt = ???? # FYLL INN: velg bredde på rektanglene
+
+while ????: # FYLL INN: Hvor lenge varer bevegelsen?
+    tid.append(t) # Legger til nåværende tid i lista
+    posisjon.append(s) # Legger til nåværende posisjon i lista
+
+    v = ???? # FYLL INN: formel for farten
+    s = ???? # FYLL INN: regn ut neste posisjon
+
+    t = ???? # FYLL INN: gå videre til neste tidpunkt
+
+
+
+# Tegner posisjonsgrafen ut ifra beregningene ovenfor
+import plotmath
+plotmath.plot(
+    xdata=tid,
+    ydata=posisjon,
+    xlabel="\$t\$ / s",
+    ylabel="\$s\$ / m",
+)
+plotmath.show()
+plotmath.close()
+`;
+
+                makeInteractiveCode(
+                    "container-code-a7d45ed3",
+                    code,
+                );
+            });
+        </script>
+        </div>
+<hr class="docutils" />
+<div class="admonition exercise">
+<p class="admonition-title">Oppgave 7</p>
+<p>Farten <span class="math notranslate nohighlight">\(v(t)\)</span> i m/s til en bil er gitt ved et funksjonsuttrykk med <strong>delt forskrift</strong>. Det betyr at funksjonsuttrykket til farten er forskjellig på ulike tidsintervaller:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+v(t) = 
+\begin{cases}
+    2t,\quad 0 \leq t &lt; 2 \\
+    \\
+    4, \quad 2 \leq t &lt; 4 \\
+    \\
+    -t + 4, \quad 4 \leq t \leq 8. 
+\end{cases}
+\end{split}\]</div>
+<p>Vi antar at startposisjonen til bilen er <span class="math notranslate nohighlight">\(s = 0 \, \mathrm{m}\)</span>.</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-19" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+a</label><div class="sd-tab-content docutils">
+<p>Tegn fartsgrafen til bilen.</p>
+</div>
+<input id="sd-tab-item-20" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-20">
+b</label><div class="sd-tab-content docutils">
+<p>Fyll ut programmet nedenfor og tegn posisjonsgrafen til bilen.</p>
+</div>
+<input id="sd-tab-item-21" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+c</label><div class="sd-tab-content docutils">
+<p>Hva blir sluttposisjonen til bilen?</p>
+</div>
+<input id="sd-tab-item-22" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+d</label><div class="sd-tab-content docutils">
+<p>Hvor langt kjører bilen til sammen?</p>
+</div>
+</div>
+
+        <div id="container-code-3aa47dc1"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`def v(t):
+    if 0 <= t < 2:
+        return 2*t
+    elif ????:
+        return 4
+    elif ????:
+        return ????
+
+
+tid = [] # liste som skal lagre tidspunkter
+posisjon = [] # liste som skal lagre posisjoner
+
+s = ???? # FYLL INN startposisjonen i meter
+t = ???? # FYLL INN: starttiden i sekunder
+dt = ???? # FYLL INN: velg bredde på rektanglene
+
+while ????: # FYLL INN: Hvor lenge varer bevegelsen?
+    tid.append(t) # Legger til nåværende tid i lista
+    posisjon.append(s) # Legger til nåværende posisjon i lista
+
+    s = ???? # FYLL INN: regn ut neste posisjon
+
+    t = ???? # FYLL INN: gå videre til neste tidpunkt
+
+
+
+# Tegner posisjonsgrafen ut ifra beregningene ovenfor
+import plotmath
+plotmath.plot(
+    xdata=tid,
+    ydata=posisjon,
+    xlabel="\$t\$ / s",
+    ylabel="\$s\$ / m",
+)
+plotmath.show()
+plotmath.close()
+`;
+
+                makeInteractiveCode(
+                    "container-code-3aa47dc1",
+                    code,
+                );
+            });
+        </script>
+        </div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book/bevegelse/programmering"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../posisjonsgrafer_og_fartsgrafer/oppgaver.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Oppgaver: Posisjonsgrafer og fartsgrafer</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Av Edvard Munch Videregående Skole
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
