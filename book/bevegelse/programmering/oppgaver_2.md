@@ -90,7 +90,7 @@ while t < 5:
 
 
 :::::::::::::{tab-item} c
-Nå legger vi til en linje `s = 0`{l=python} på starten av programmet som gir variablen som holder styr på posisjonen over tid. I tillegg legger vi til en linje `s = s + dt`{l=python} i `while`{l=python}-løkka. I løkka skriver vi ut fire verdier på hver runde:
+Nå legger vi til en linje `s = 0`{l=python} på starten av programmet som gir variablen som holder styr på posisjonen over tid. I tillegg legger vi til en linje `s = s + v * dt`{l=python} i `while`{l=python}-løkka. I løkka skriver vi ut fire verdier på hver runde:
 1. Verdien til `t`{l=python}
 2. Verdien til `v * dt`{l=python}
 3. Verdien til `s`{l=python}
@@ -178,6 +178,26 @@ Hva er startfarten til ballen?
 :::::::::::::{tab-item} e
 Hvor lang tid tar det før ballen treffer bakken, ifølge programmet? (Kjør programmet!)
 
+
+
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+Posisjonsfunksjonen vil være gitt ved 
+
+$$
+s(t) = -\dfrac{9.81}{2}t^2 + 30t + 2
+$$
+
+Bruk CAS til å sjekke om svaret du får fra programmet stemmer overens med når $s(t) = 0$.
+
+
+
 :::::::::::::
 
 
@@ -226,7 +246,7 @@ Kjør programmet og se på posisjonsgrafen. Beskriv bevegelsen med utgangspunkt 
 1. Når er farten til ballen størst?
 2. Når er farten til ballen lik null?
 3. Hvor høyt over bakken kommer ballen (omtrent)?
-4. Når øker farten positiv og når er farten negativ? 
+4. Når er farten positiv, og når er farten negativ?
 
 
 :::{interactive-code}
@@ -552,7 +572,7 @@ plotmath.close()
 
 
 :::::::::::::::{exercise} Oppgave 8
-En fallskjermhopper hopper ut av et fly fra 3000 m høyde. Under fallet, opplever fallskjermhopperen en akselerasjon som er gitt ved
+En fallskjermhopper hopper ut av et fly fra 3000 m høyde. Under fallet, opplever en motstand fra luften og en tiltrekning til bakken fra tyngdefeltet. Dermed har fallskjermhopperen en akselerasjon som er gitt ved
 
 $$
 a(t) = -9.81 + 0.0025 \cdot v(t)^2
