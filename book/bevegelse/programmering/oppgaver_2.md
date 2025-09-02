@@ -1,4 +1,4 @@
-# Programmering: Posisjon, fart og akselerasjon
+# Oppgaver: Programmering med posisjon, fart og akselerasjon
 
 
 
@@ -251,7 +251,7 @@ print(f"Ballen treffer bakken etter {t = :0.2f} s.")
 
 # Tegner posisjonsgrafen
 import plotmath
-plotmath.plot(xdata=tid, ydata=posisjon, xlabel="$s$ / m", ylabel="$t$ / s")
+plotmath.plot(xdata=tid, ydata=posisjon, xlabel="$t$ / s", ylabel="$s$ / m")
 plotmath.show()
 plotmath.close()
 :::
@@ -335,7 +335,16 @@ Anna: Men da må vi vel først bruke akselerasjon til å regne ut fart, og deret
 ---
 class: tabs-parts
 ---
+
+
 :::::::::::::{tab-item} a
+Forklar hva Rotem mener med at det sammenhengen mellom akselerasjon og fart, og sammenhengen mellom fart og posisjon bør være lik ut ifra enhetene. 
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
 Anna og Rotem har skrevet et program som de så klippet ut for å teste hverandre på hvilken rekkefølge programmet må skrives i for å regne ut farten og posisjonen over tid. Men de har helt glemt hvilken rekkefølge det skal stå i.
 
 Sett sammen programmet til Anna og Rotem så det regner ut farten og posisjonen til steinen over tid.
@@ -345,7 +354,7 @@ Sett sammen programmet til Anna og Rotem så det regner ut farten og posisjonen 
 :::::::::::::
 
 
-:::::::::::::{tab-item} b
+:::::::::::::{tab-item} c
 Se på hvordan farten og posisjonen i programmet regnes ut.
 
 Kan du forklare hva Anna og Rotem mener med at sammenhengen mellom akselerasjon og fart er den samme som sammenhengen mellom fart og posisjon?
@@ -454,5 +463,192 @@ der $s(t)$ er posisjonen til klossen etter $t$ sekunder og $a(t)$ er akselerasjo
 
 
 
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Fyll ut programmet nedenfor og kjør programmet for å tegne fartsgrafen og posisjonsgrafen til klossen.
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Se på posisjonsgrafen (husk på se på aksene for å se hvilken graf du ser på!)
+
+Gi en beskrivelse av klossens bevegelse ut ifra posisjonsgrafen.
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Se på fartsgrafen til klossen.
+
+Gi en beskrivelse av klossens bevegelse ut ifra fartsgrafen.
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Kan du gi en beskrivelse av sammenhengen mellom posisjonsgrafen og fartsgrafen til klossen?
+
+
+::::{hints}
+Vi har ikke enda vektlagt denne ideen, men kanskje har du oppdaget at "stigningstallet" til posisjonsgrafen gir oss farten til grafen. Mer presist vil den momentane vekstfarten til posisjonsgrafen være lik farten til klossen. Se på de grafene og sjekk om dette stemmer.
+::::
+
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+
+:::{interactive-code}
+tid = []
+fart = []
+posisjon = []
+
+
+t = 0
+v = ???? # FYLL INN
+s = ???? # FYLL INN
+dt = 0.0001
+
+while ????: # FYLL INN betingelse for bevegelsen
+    tid.append(t)
+    fart.append(v)
+    posisjon.append(s)
+
+
+    a = ???? # FYLL INN akselerasjonen
+    v = ???? # FYLL INN formelen for å regne ut fart fra akselerasjon
+    s = ???? # FYLL INN formelen for å regne ut posisjon fra fart
+
+    t = t + dt
+
+
+
+
+import plotmath
+plotmath.plot(xdata=tid, ydata=fart, xlabel="$t$ / s", ylabel="$v$ / (m/s)")
+plotmath.show()
+plotmath.close()
+
+plotmath.plot(xdata=tid, ydata=posisjon, xlabel="$t$ / s", ylabel="$s$ / m")
+plotmath.show()
+plotmath.close()
+:::
+
+
+
 
 :::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 8
+En fallskjermhopper hopper ut av et fly fra 3000 m høyde. Under fallet, opplever fallskjermhopperen en akselerasjon som er gitt ved
+
+$$
+a(t) = -9.81 + 0.0025 \cdot v(t)^2
+$$
+
+der $a(t)$ er målt i $\mathrm{m/s^2}$. Akselerasjonen er altså avhengig av farten til fallskjermhopperen.
+
+Vi tenker oss at startfaten til fallskjermhopperen er $v = 0 \, \mathrm{m/s}$.
+
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Fyll ut programmet nedenfor og kjør programmet for å tegne fartsgrafen og posisjonsgrafen til fallskjermhopperen.
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bruk fartsgrafen til å beskrive hvordan bevegelsen til fallskjermhopperen utvikler seg over tid.
+
+Kan du forklare hva som skjer med fallskjermhopperens fart når tiden blir stor? Hva tror du er grunnen til at farten oppfører seg slik?
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Kan du beskrive sammenhengen mellom fartsgrafen og posisjonsgrafen? 
+
+
+::::{hints}
+Tenk på at "stigningstallet" til posisjonsgrafen gir oss farten til fallskjermhopperen. 
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Hvor lang tid tar det før fallskjermhopperen lander på bakken? 
+
+Er det noe urealistisk med bevegelsen til fallskjermhopperen ved landingen? 
+
+:::::::::::::
+
+
+
+
+
+
+
+::::::::::::::
+
+
+
+:::{interactive-code}
+tid = []
+fart = []
+posisjon = []
+
+
+t = 0
+v = ???? # FYLL INN
+s = ???? # FYLL INN
+dt = 0.0001
+
+while ????: # FYLL INN betingelse for bevegelsen
+    tid.append(t)
+    fart.append(v)
+    posisjon.append(s)
+
+
+    a = ???? # FYLL INN akselerasjonen
+    v = ???? # FYLL INN formelen for å regne ut fart fra akselerasjon
+    s = ???? # FYLL INN formelen for å regne ut posisjon fra fart
+
+    t = t + dt
+
+
+
+
+import plotmath
+plotmath.plot(xdata=tid, ydata=fart, xlabel="$t$ / s", ylabel="$v$ / (m/s)")
+plotmath.show()
+plotmath.close()
+
+plotmath.plot(xdata=tid, ydata=posisjon, xlabel="$t$ / s", ylabel="$s$ / m")
+plotmath.show()
+plotmath.close()
+:::
+
+:::::::::::::::
+
+
