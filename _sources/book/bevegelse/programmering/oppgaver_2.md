@@ -558,7 +558,7 @@ $$
 a(t) = -9.81 + 0.0025 \cdot v(t)^2
 $$
 
-der $a(t)$ er målt i $\mathrm{m/s^2}$. Akselerasjonen er altså avhengig av farten til fallskjermhopperen.
+der $a(t)$ er målt i $\mathrm{m/s^2}$ og $v(t)$ er farten i $\mathrm{m/s}$ til fallskjermhopperen etter $t$ sekunder. Akselerasjonen er altså avhengig av farten til fallskjermhopperen.
 
 Vi tenker oss at startfarten til fallskjermhopperen er $v = 0 \, \mathrm{m/s}$. Posisjonen til fallskjermhopperen er målt i meter.
 
