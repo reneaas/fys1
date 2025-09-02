@@ -1,7 +1,7 @@
 title: Fysikk 1
 author: Edvard Munch Videregående Skole
 copyright: "2025"
-# logo: logo/evg_logo_med_1T.png
+logo: logo/android-chrome-512x512.png
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", README.md, LICENSE.md, LICENSE_CONTENT.md, HOWTOWRITE.md]
 description: "Oppgaver til Fysikk 1 for læreplanen LK20."
 
