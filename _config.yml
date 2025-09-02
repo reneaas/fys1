@@ -100,7 +100,7 @@ sphinx:
 
   config:
     language: norwegian
-    # html_favicon: favicon.ico
+    html_favicon: favicon.ico
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js
     mathjax3_config:
       tex:

@@ -11,6 +11,7 @@ parts:
 
     - file: book/bevegelse/posisjonsgrafer_og_fartsgrafer/oppgaver.md
     - file: book/bevegelse/programmering/oppgaver.md
+    - file: book/bevegelse/programmering/oppgaver_2.md
 
 
     
