@@ -325,6 +325,29 @@ while ????:
 :::
 
 
+::::{answer}
+:::{code-block} python
+---
+linenos:
+emphasize-lines: 5, 6
+---
+s = 2
+t = 0
+dt = 0.001
+
+v = -9.81 * t + 30 # må regne ut én gang før løkka så `v` er definert
+while v > 0: # så lenge farten er positiv.
+    v = -9.81 * t + 30
+    s = s + v * dt
+
+    t = t + dt
+
+
+print(t)
+print(s)
+:::
+::::
+
 :::::::::::::::
 
 
@@ -422,6 +445,50 @@ Vi minner om disse opplysningene for steinen som blir sluppet fra broen:
 
 > Du kan scrolle i vinduet som gir en utskrift der figurene kommer slik at du får se både fartsgrafen og posisjonsgrafen!
 
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+emphasize-lines: 6-8, 11, 17-19
+---
+tid = []
+fart = []
+posisjon = []
+
+
+t = 0
+v = 0
+s = 150
+dt = 0.0001
+
+while s > 0:
+    tid.append(t)
+    fart.append(v)
+    posisjon.append(s)
+
+
+    a = -9.81
+    v = v + a * dt
+    s = s + v * dt
+
+    t = t + dt
+
+
+
+
+import plotmath
+plotmath.plot(xdata=tid, ydata=fart, xlabel="$t$ / s", ylabel="$v$ / (m/s)")
+plotmath.show()
+plotmath.close()
+
+plotmath.plot(xdata=tid, ydata=posisjon, xlabel="$t$ / s", ylabel="$s$ / m")
+plotmath.show()
+plotmath.close()
+:::
+::::
+
 :::{interactive-code}
 tid = []
 fart = []
@@ -488,9 +555,52 @@ der $s(t)$ er posisjonen til klossen etter $t$ sekunder og $a(t)$ er akselerasjo
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
+Vi tenker oss at startposisjonen til klossen er $s = 1 \, \mathrm{m}$ når vi har strukket ut fjæra. Startfarten til klossen er $v = 0 \, \mathrm{m/s}$. Du skal regne ut bevegelsen de 10 første sekundene.
+
 Fyll ut programmet nedenfor og kjør programmet for å tegne fartsgrafen og posisjonsgrafen til klossen.
 
 
+::::{answer}
+:::{code-block} python
+---
+linenos:
+emphasize-lines: 6-8, 11, 17-19
+---
+tid = []
+fart = []
+posisjon = []
+
+
+t = 0
+v = 0
+s = 1
+dt = 0.0001
+
+while t < 10:
+    tid.append(t)
+    fart.append(v)
+    posisjon.append(s)
+
+
+    a = -2 * s
+    v = v + a * dt
+    s = s + v * dt
+
+    t = t + dt
+
+
+
+
+import plotmath
+plotmath.plot(xdata=tid, ydata=fart, xlabel="$t$ / s", ylabel="$v$ / (m/s)")
+plotmath.show()
+plotmath.close()
+
+plotmath.plot(xdata=tid, ydata=posisjon, xlabel="$t$ / s", ylabel="$s$ / m")
+plotmath.show()
+plotmath.close()
+:::
+::::
 
 :::::::::::::
 
@@ -591,6 +701,50 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Fyll ut programmet nedenfor og kjør programmet for å tegne fartsgrafen og posisjonsgrafen til fallskjermhopperen.
 
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos: true
+emphasize-lines: 6-8, 11, 17-19
+---
+tid = []
+fart = []
+posisjon = []
+
+
+t = 0
+v = 0
+s = 3000
+dt = 0.0001
+
+while s > 0:
+    tid.append(t)
+    fart.append(v)
+    posisjon.append(s)
+
+
+    a = -9.81 + 0.0025 * v**2
+    v = v + a * dt
+    s = s + v * dt
+
+    t = t + dt
+
+
+
+
+import plotmath
+plotmath.plot(xdata=tid, ydata=fart, xlabel="$t$ / s", ylabel="$v$ / (m/s)")
+plotmath.show()
+plotmath.close()
+
+plotmath.plot(xdata=tid, ydata=posisjon, xlabel="$t$ / s", ylabel="$s$ / m")
+plotmath.show()
+plotmath.close()
+
+:::
+::::
 
 :::::::::::::
 

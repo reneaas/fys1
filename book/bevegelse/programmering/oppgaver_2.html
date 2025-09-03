@@ -446,7 +446,7 @@ a</label><div class="sd-tab-content docutils">
 <p>Programmet skriver ut verdien til <code class="code docutils literal highlight highlight-python"><span class="n">t</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span></code> på hver runde i <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkka.</p>
 <p>Kjør programmet og se på sammenhengen mellom utskriften til <code class="code docutils literal highlight highlight-python"><span class="n">t</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">t</span> <span class="o">+</span> <span class="n">dt</span></code>. Kan du forklare hva linja <code class="code docutils literal highlight highlight-python"><span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span></code> gjør med verdien til <code class="code docutils literal highlight highlight-python"><span class="n">t</span></code>?</p>
 
-        <div id="container-code-d9734b13"></div>
+        <div id="container-code-60642d3d"></div>
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                 const code = 
@@ -459,7 +459,7 @@ while t < 5:
     t = t + dt`;
 
                 makeInteractiveCode(
-                    "container-code-d9734b13",
+                    "container-code-60642d3d",
                     code,
                 );
             });
@@ -489,7 +489,7 @@ b</label><div class="sd-tab-content docutils">
 <p>Kjør programmet og sjekk om du ser en sammenheng mellom utskriften og verdiene for farten <code class="code docutils literal highlight highlight-python"><span class="n">v</span></code> for hvert tidspunkt <code class="code docutils literal highlight highlight-python"><span class="n">t</span></code>.</p>
 <p>Tegn punktene fra utskriften i et koordinatssystem og sjekk at det blir slik du forventer fra funksjonsuttrykket <span class="math notranslate nohighlight">\(v(t)\)</span>.</p>
 
-        <div id="container-code-574039a1"></div>
+        <div id="container-code-8b6dfbef"></div>
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                 const code = 
@@ -507,7 +507,7 @@ while t < 5:
 `;
 
                 makeInteractiveCode(
-                    "container-code-574039a1",
+                    "container-code-8b6dfbef",
                     code,
                 );
             });
@@ -530,7 +530,7 @@ c</label><div class="sd-tab-content docutils">
 </ol>
 <p>Forklar hva linja <code class="code docutils literal highlight highlight-python"><span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span></code> gjør for noe ut ifra det du har sett.</p>
 
-        <div id="container-code-94a6e395"></div>
+        <div id="container-code-f32b25ef"></div>
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                 const code = 
@@ -551,7 +551,7 @@ while t < 5:
 `;
 
                 makeInteractiveCode(
-                    "container-code-94a6e395",
+                    "container-code-f32b25ef",
                     code,
                 );
             });
@@ -598,9 +598,9 @@ e</label><div class="sd-tab-content docutils">
 <div class="sidebar-cas">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-b7b15f84" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-b7b15f84" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-b7b15f84" class="ggb-window"></div>
+<button id="button-ggb-cas-0d272e00" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-0d272e00" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-0d272e00" class="ggb-window"></div>
 </div>
 
 <style>
@@ -617,12 +617,12 @@ e</label><div class="sd-tab-content docutils">
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-b7b15f84").width(),
-            h = $("#ggb-cas-b7b15f84").height();
+      const w = $("#ggb-cas-0d272e00").width(),
+            h = $("#ggb-cas-0d272e00").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-b7b15f84").dialog({
+    const $dlg = $("#dialog-ggb-cas-0d272e00").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -631,14 +631,14 @@ e</label><div class="sd-tab-content docutils">
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-b7b15f84",
+            appName: "classic", id: "ggb-cas-0d272e00",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-b7b15f84");
+          }, true).inject("ggb-cas-0d272e00");
         } else {
           applySize();
         }
@@ -681,7 +681,7 @@ e</label><div class="sd-tab-content docutils">
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-b7b15f84')) {
+          if (!e.target.closest('#ggb-cas-0d272e00')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -709,7 +709,7 @@ e</label><div class="sd-tab-content docutils">
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-b7b15f84');
+      const ggbContainer = document.getElementById('ggb-cas-0d272e00');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -755,10 +755,10 @@ e</label><div class="sd-tab-content docutils">
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-b7b15f84").button()
+    $("#button-ggb-cas-0d272e00").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-b7b15f84").dialog("open");
+        $("#dialog-ggb-cas-0d272e00").dialog("open");
       });
   });
 })();
@@ -773,8 +773,8 @@ s(t) = -\dfrac{9.81}{2}t^2 + 30t + 2
 </div>
 </div>
 
-        <div id="container-parsons-puzzle-puzzle-99cce8bd" class="puzzle-container"></div>
-        <div id="container-kode-puzzle-99cce8bd" style="display: none"></div>
+        <div id="container-parsons-puzzle-puzzle-a658313e" class="puzzle-container"></div>
+        <div id="container-kode-puzzle-a658313e" style="display: none"></div>
 
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
@@ -789,8 +789,8 @@ while s > 0:
 
 print(f"Ballen treffer bakken etter {t = :0.2f} s.")`;
 
-                const puzzleContainerId = 'container-parsons-puzzle-puzzle-99cce8bd';
-                const editorId = 'container-kode-puzzle-99cce8bd';
+                const puzzleContainerId = 'container-parsons-puzzle-puzzle-a658313e';
+                const editorId = 'container-kode-puzzle-a658313e';
 
                 const switchToCodeEditor = makeCallbackFunction(puzzleContainerId, editorId);
                 const puzzle = new ParsonsPuzzle(
@@ -827,7 +827,7 @@ v(t) = -9.81\cdot t + 30
 <li><p>Når er farten positiv, og når er farten negativ?</p></li>
 </ol>
 
-        <div id="container-code-cf9065c6"></div>
+        <div id="container-code-e408dd1c"></div>
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                 const code = 
@@ -857,7 +857,7 @@ plotmath.show()
 plotmath.close()`;
 
                 makeInteractiveCode(
-                    "container-code-cf9065c6",
+                    "container-code-e408dd1c",
                     code,
                 );
             });
@@ -875,7 +875,7 @@ plotmath.close()`;
 <p>Ta utgangspunkt i dialogen til Anna og Rotem, og sett en betingelse i <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkka slik at programmet finner ut når ballen er på sitt høyeste punkt.</p>
 <p>Bestem også hvor høyt over bakken ballen kommer.</p>
 
-        <div id="container-code-2ea4f0d9"></div>
+        <div id="container-code-b101c91d"></div>
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                 const code = 
@@ -892,12 +892,31 @@ while ????:
 # Skriv ut når og hvor høyt ballen er over bakken på sitt høyeste`;
 
                 makeInteractiveCode(
-                    "container-code-2ea4f0d9",
+                    "container-code-b101c91d",
                     code,
                 );
             });
         </script>
-        </div>
+        <div class="admonition answer dropdown">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">s</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos"> 2</span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 3</span><span class="n">dt</span> <span class="o">=</span> <span class="mf">0.001</span>
+<span class="linenos"> 4</span>
+<span class="hll"><span class="linenos"> 5</span><span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9.81</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="mi">30</span> <span class="c1"># må regne ut én gang før løkka så `v` er definert</span>
+</span><span class="hll"><span class="linenos"> 6</span><span class="k">while</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># så lenge farten er positiv.</span>
+</span><span class="linenos"> 7</span>    <span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9.81</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="mi">30</span>
+<span class="linenos"> 8</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>    <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">14</span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <hr class="docutils" />
 <div class="admonition exercise">
 <p class="admonition-title">Oppgave 5</p>
@@ -927,8 +946,8 @@ c</label><div class="sd-tab-content docutils">
 </div>
 </div>
 
-        <div id="container-parsons-puzzle-puzzle-d4d59c20" class="puzzle-container"></div>
-        <div id="container-kode-puzzle-d4d59c20" style="display: none"></div>
+        <div id="container-parsons-puzzle-puzzle-74bbc36c" class="puzzle-container"></div>
+        <div id="container-kode-puzzle-74bbc36c" style="display: none"></div>
 
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
@@ -944,8 +963,8 @@ while s > 0:
 
 print(f"Det tar {t = :0.2f} s før steinen treffer vannet")`;
 
-                const puzzleContainerId = 'container-parsons-puzzle-puzzle-d4d59c20';
-                const editorId = 'container-kode-puzzle-d4d59c20';
+                const puzzleContainerId = 'container-parsons-puzzle-puzzle-74bbc36c';
+                const editorId = 'container-kode-puzzle-74bbc36c';
 
                 const switchToCodeEditor = makeCallbackFunction(puzzleContainerId, editorId);
                 const puzzle = new ParsonsPuzzle(
@@ -970,8 +989,46 @@ print(f"Det tar {t = :0.2f} s før steinen treffer vannet")`;
 <blockquote>
 <div><p>Du kan scrolle i vinduet som gir en utskrift der figurene kommer slik at du får se både fartsgrafen og posisjonsgrafen!</p>
 </div></blockquote>
+<div class="admonition answer dropdown">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">tid</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 2</span><span class="n">fart</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 3</span><span class="n">posisjon</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
+<span class="hll"><span class="linenos"> 6</span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="hll"><span class="linenos"> 7</span><span class="n">v</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="hll"><span class="linenos"> 8</span><span class="n">s</span> <span class="o">=</span> <span class="mi">150</span>
+</span><span class="linenos"> 9</span><span class="n">dt</span> <span class="o">=</span> <span class="mf">0.0001</span>
+<span class="linenos">10</span>
+<span class="hll"><span class="linenos">11</span><span class="k">while</span> <span class="n">s</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="linenos">12</span>    <span class="n">tid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">13</span>    <span class="n">fart</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="linenos">14</span>    <span class="n">posisjon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span>
+<span class="hll"><span class="linenos">17</span>    <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9.81</span>
+</span><span class="hll"><span class="linenos">18</span>    <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">dt</span>
+</span><span class="hll"><span class="linenos">19</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span>
+</span><span class="linenos">20</span>
+<span class="linenos">21</span>    <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="kn">import</span> <span class="nn">plotmath</span>
+<span class="linenos">27</span><span class="n">plotmath</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="o">=</span><span class="n">tid</span><span class="p">,</span> <span class="n">ydata</span><span class="o">=</span><span class="n">fart</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;$t$ / s&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;$v$ / (m/s)&quot;</span><span class="p">)</span>
+<span class="linenos">28</span><span class="n">plotmath</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="linenos">29</span><span class="n">plotmath</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="n">plotmath</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="o">=</span><span class="n">tid</span><span class="p">,</span> <span class="n">ydata</span><span class="o">=</span><span class="n">posisjon</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;$t$ / s&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;$s$ / m&quot;</span><span class="p">)</span>
+<span class="linenos">32</span><span class="n">plotmath</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="linenos">33</span><span class="n">plotmath</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 
-        <div id="container-code-4e4b2a04"></div>
+        <div id="container-code-1718d06e"></div>
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                 const code = 
@@ -1010,7 +1067,7 @@ plotmath.show()
 plotmath.close()`;
 
                 makeInteractiveCode(
-                    "container-code-4e4b2a04",
+                    "container-code-1718d06e",
                     code,
                 );
             });
@@ -1030,7 +1087,46 @@ a(t) = -2 \cdot s(t)
 <input checked="checked" id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-11">
 a</label><div class="sd-tab-content docutils">
+<p>Vi tenker oss at startposisjonen til klossen er <span class="math notranslate nohighlight">\(s = 1 \, \mathrm{m}\)</span> når vi har strukket ut fjæra. Startfarten til klossen er <span class="math notranslate nohighlight">\(v = 0 \, \mathrm{m/s}\)</span>. Du skal regne ut bevegelsen de 10 første sekundene.</p>
 <p>Fyll ut programmet nedenfor og kjør programmet for å tegne fartsgrafen og posisjonsgrafen til klossen.</p>
+<div class="admonition answer dropdown">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">tid</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 2</span><span class="n">fart</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 3</span><span class="n">posisjon</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
+<span class="hll"><span class="linenos"> 6</span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="hll"><span class="linenos"> 7</span><span class="n">v</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="hll"><span class="linenos"> 8</span><span class="n">s</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class="linenos"> 9</span><span class="n">dt</span> <span class="o">=</span> <span class="mf">0.0001</span>
+<span class="linenos">10</span>
+<span class="hll"><span class="linenos">11</span><span class="k">while</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+</span><span class="linenos">12</span>    <span class="n">tid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">13</span>    <span class="n">fart</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="linenos">14</span>    <span class="n">posisjon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span>
+<span class="hll"><span class="linenos">17</span>    <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">s</span>
+</span><span class="hll"><span class="linenos">18</span>    <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">dt</span>
+</span><span class="hll"><span class="linenos">19</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span>
+</span><span class="linenos">20</span>
+<span class="linenos">21</span>    <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="kn">import</span> <span class="nn">plotmath</span>
+<span class="linenos">27</span><span class="n">plotmath</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="o">=</span><span class="n">tid</span><span class="p">,</span> <span class="n">ydata</span><span class="o">=</span><span class="n">fart</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;$t$ / s&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;$v$ / (m/s)&quot;</span><span class="p">)</span>
+<span class="linenos">28</span><span class="n">plotmath</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="linenos">29</span><span class="n">plotmath</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="n">plotmath</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="o">=</span><span class="n">tid</span><span class="p">,</span> <span class="n">ydata</span><span class="o">=</span><span class="n">posisjon</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;$t$ / s&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;$s$ / m&quot;</span><span class="p">)</span>
+<span class="linenos">32</span><span class="n">plotmath</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="linenos">33</span><span class="n">plotmath</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 <input id="sd-tab-item-12" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-12">
@@ -1055,7 +1151,7 @@ d</label><div class="sd-tab-content docutils">
 </div>
 </div>
 
-        <div id="container-code-5cd187da"></div>
+        <div id="container-code-4117ed7b"></div>
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                 const code = 
@@ -1094,7 +1190,7 @@ plotmath.show()
 plotmath.close()`;
 
                 makeInteractiveCode(
-                    "container-code-5cd187da",
+                    "container-code-4117ed7b",
                     code,
                 );
             });
@@ -1115,6 +1211,44 @@ a(t) = -9.81 + 0.0025 \cdot v(t)^2
 <label class="sd-tab-label" for="sd-tab-item-15">
 a</label><div class="sd-tab-content docutils">
 <p>Fyll ut programmet nedenfor og kjør programmet for å tegne fartsgrafen og posisjonsgrafen til fallskjermhopperen.</p>
+<div class="admonition answer dropdown">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">tid</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 2</span><span class="n">fart</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 3</span><span class="n">posisjon</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
+<span class="hll"><span class="linenos"> 6</span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="hll"><span class="linenos"> 7</span><span class="n">v</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="hll"><span class="linenos"> 8</span><span class="n">s</span> <span class="o">=</span> <span class="mi">3000</span>
+</span><span class="linenos"> 9</span><span class="n">dt</span> <span class="o">=</span> <span class="mf">0.0001</span>
+<span class="linenos">10</span>
+<span class="hll"><span class="linenos">11</span><span class="k">while</span> <span class="n">s</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="linenos">12</span>    <span class="n">tid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">13</span>    <span class="n">fart</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="linenos">14</span>    <span class="n">posisjon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span>
+<span class="hll"><span class="linenos">17</span>    <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9.81</span> <span class="o">+</span> <span class="mf">0.0025</span> <span class="o">*</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span>
+</span><span class="hll"><span class="linenos">18</span>    <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">dt</span>
+</span><span class="hll"><span class="linenos">19</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span>
+</span><span class="linenos">20</span>
+<span class="linenos">21</span>    <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="kn">import</span> <span class="nn">plotmath</span>
+<span class="linenos">27</span><span class="n">plotmath</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="o">=</span><span class="n">tid</span><span class="p">,</span> <span class="n">ydata</span><span class="o">=</span><span class="n">fart</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;$t$ / s&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;$v$ / (m/s)&quot;</span><span class="p">)</span>
+<span class="linenos">28</span><span class="n">plotmath</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="linenos">29</span><span class="n">plotmath</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="n">plotmath</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="o">=</span><span class="n">tid</span><span class="p">,</span> <span class="n">ydata</span><span class="o">=</span><span class="n">posisjon</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;$t$ / s&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;$s$ / m&quot;</span><span class="p">)</span>
+<span class="linenos">32</span><span class="n">plotmath</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="linenos">33</span><span class="n">plotmath</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 <input id="sd-tab-item-16" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-16">
@@ -1139,7 +1273,7 @@ d</label><div class="sd-tab-content docutils">
 </div>
 </div>
 
-        <div id="container-code-9ee08ce3"></div>
+        <div id="container-code-b9a77cfc"></div>
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", () => {
                 const code = 
@@ -1178,7 +1312,7 @@ plotmath.show()
 plotmath.close()`;
 
                 makeInteractiveCode(
-                    "container-code-9ee08ce3",
+                    "container-code-b9a77cfc",
                     code,
                 );
             });
