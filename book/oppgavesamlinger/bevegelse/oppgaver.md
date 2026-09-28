@@ -1174,3 +1174,30 @@ print(s)
 
 
 
+
+<!-- :::::::::::::::{exercise} Oppgave 10 
+To tog beveger seg langs to parallelle rette skinner. Vet $t = 0$ er tog $A$ i $s = 0$ med en fart $4{,}0 \en {m/s}$. Tog $B$ er $12 \en m$ bak tog $A$ med en fart $6{,}0 \en {m/s}$. 
+
+Begge tog har samme konstant akselerasjon $a = 0{,}50 \en {m/s^2}$.
+
+:::::::::::::{part} a
+Finn både tidspunktet og posisjonen der tog $A$ og tog $B$ er ved siden av hverandre.
+
+
+:::::{answer}
+
+::::{solution}
+Posisjonen til tog $A$ er gitt ved 
+
+$$
+s_A = 
+$$
+::::
+:::::
+
+
+:::::::::::::
+
+::::::::::::::: -->
+
+
