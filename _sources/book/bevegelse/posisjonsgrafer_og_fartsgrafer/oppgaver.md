@@ -20,6 +20,7 @@ ymin: -6
 ymax: 6
 xlabel: $t / \mathrm{s}$
 ylabel: $s / \mathrm{m}$
+nocache:
 :::
 
 

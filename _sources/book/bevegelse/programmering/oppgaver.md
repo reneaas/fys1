@@ -1,239 +1,235 @@
-# Oppgaver: Programmering av posisjonsgrafer
+# Oppgaver: Bevegelse
+
 
 
 :::::::::::::::{exercise} Oppgave 1
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Nedenfor vises et program som skriver ut noen tall.
-
-Les programmet og forsutsi hvilke tall som skrives ut:
+En stein slipper fra en høyde på $100$ meter og faller fritt ned mot bakken.
 
 
-:::{interactive-code}
----
-predict:
----
-t = 0
-while t < 4:
-    print(t)
-    t = t + 1
-
-
-:::
+:::::::::::::{part} a
+Bruk bevegelseslikningen til å finne farten og høyden til steinen etter $1$ sekund. 
 
 
 :::::::::::::
 
 
-:::::::::::::{tab-item} b
+:::::::::::::{part} b
+Beregn farten og høyden til steinen over bakken etter $1$ sekund med **Eulers** metode. 
 
-Nedenfor vises et program som skriver ut noen tall.
-
-Les programmet og forsutsi hvilke tall som skrives ut:
-
-
-:::{interactive-code}
----
-predict:
----
-t = 0
-while t < 4:
-    print(t)
-    t = t + 0.5 # <-- legg merke til forskjellen fra forrige program
-
-
-:::
-
+Bruk steglengden $\Delta t = 0.5 \, \mathrm{s}$.
 :::::::::::::
 
 
-:::::::::::::{tab-item} c
+:::::::::::::{part} c
+Beregn farten og høyden til steinen over bakken etter $1$ sekund med **Euler-Cromers** metode. 
 
-Nedenfor vises et program som skriver ut noen tall.
-
-Les programmet og forsutsi hvilke tall som skrives ut:
-
-
-:::{interactive-code}
----
-predict:
----
-t = 0
-while t < 4:
-    print(t)
-    t = t + 0.1 # <-- legg merke til forskjellen fra forrige program
-
-
-:::
-
+Bruk steglengden $\Delta t = 0.5 \, \mathrm{s}$.
 :::::::::::::
 
 
-::::::::::::::
 :::::::::::::::
 
 
+
 ---
 
 
-
-:::{margin} Tips: Oppgave 2
-Tegn fartsgrafen for farten som er brukt i hvert program først!
-
-Du kan forvente små avvik fra det eksakte svaret når du kjører programmene, spesielt i oppgave **c**.
-:::
 
 :::::::::::::::{exercise} Oppgave 2
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Nedenfor vises et program som regner ut posisjonen til en gjenstand.
+En stein kastes rett opp fra en starthøyde $2.0 \, \mathrm{m}$ med en startfart $v_0 = 20 \, \mathrm{m/s}$. Steinen er i fritt fall etter at den har blitt kastet.
 
-Bestem ved regning hvilken verdi som skrives ut av programmet. Sjekk svaret ditt nedenfor!
+Nedenfor vises fire programmer som simulerer bevegelsen, men som kan brukes til å regne ut forskjellige størrelser knyttet til steinens bevegelse.
 
-:::{interactive-code}
+
+:::::{grid} 1 1 2 2
 ---
-predict:
+gutter: 3
 ---
-s = 0
+::::{grid-item-card} A
+:::{code-block} python
+---
+linenos:
+---
+s = 2.0
+v = 20
+a = -9.81
 t = 0
-dt = 1
-while t < 5:
-    v = 2
-    s = s + v * dt
+dt = 1e-3
 
+while v > 0:
     t = t + dt
+    v = v + a * dt
+    s = s + v * dt
 
 print(s)
 :::
+::::
+
+
+::::{grid-item-card} B
+:::{code-block} python
+---
+linenos:
+---
+s = 2.0
+v = 20
+a = -9.81
+t = 0
+dt = 1e-3
+
+while s > 0:
+    t = t + dt
+    v = v + a * dt
+    s = s + v * dt
+
+print(t)
+:::
+::::
+
+
+::::{grid-item-card} C
+:::{code-block} python
+---
+linenos:
+---
+s = 2.0
+v = 20
+a = -9.81
+t = 0
+dt = 1e-3
+
+while v >= -20:
+    t = t + dt
+    v = v + a * dt
+    s = s + v * dt
+
+print(t)
+:::
+::::
+
+
+::::{grid-item-card} D
+:::{code-block} python
+---
+linenos:
+---
+s = 2.0
+v = 20
+a = -9.81
+t = 0
+dt = 1e-3
+
+while s > 0:
+    t = t + dt
+    v = v + a * dt
+    s = s + v * dt
+
+print(v)
+:::
+::::
+
+
+:::::
+
+
+
+:::::::::::::{part} a
+Hvilket program kan brukes til å finne hvor høyt over bakken steinen er på sitt høyeste punkt?
+
 
 :::::::::::::
 
 
-:::::::::::::{tab-item} b
-Nedenfor vises et program som regner ut posisjonen til en gjenstand.
 
-Bestem ved regning hvilken verdi som skrives ut av programmet. Sjekk svaret ditt nedenfor!
+:::::::::::::{part} b
+Hvilket program kan brukes til å regne ut hvor lang tid det tar før steinen er tilbake til samme høyde som den ble kastet fra? 
 
-:::{interactive-code}
----
-predict:
----
-s = 0
-t = 0
-dt = 0.1
-while t < 10:
-    v = t - 5
-    s = s + v * dt
-
-    t = t + dt
-
-print(s)
-:::
 
 :::::::::::::
 
 
-:::::::::::::{tab-item} c
-Nedenfor vises et program som regner ut posisjonen til en gjenstand.
+:::::::::::::{part} c
+Hvilket program kan brukes til å finne hvor lang tid det tar før den treffer bakken?
 
-Bestem ved regning hvilken verdi som skrives ut av programmet. Sjekk svaret ditt nedenfor!
-
-:::{interactive-code}
----
-predict:
----
-s = 2
-t = 0
-dt = 0.01
-while t < 5:
-    v = 2*t
-    s = s + v * dt
-
-    t = t + dt
-
-print(s)
-:::
 
 :::::::::::::
 
 
-::::::::::::::
+
+:::::::::::::{part} d
+Hva kan det gjenværende programmet brukes til å bestemme? 
+
+
+:::::::::::::
+
+
 :::::::::::::::
 
 
+
 ---
+
 
 
 :::::::::::::::{exercise} Oppgave 3
-I figuren nedenfor vises strategien for å bestemme arealet under en fartsgraf.
+:::::::::::::{part} a
+Nedenfor vises et program som regner på bevegelsen til en kule som er i fritt fall.
 
 
-:::{figure} ./figurer/teori/rektangelmetoden/annotert.svg
+Bruk bevegelseslikningene til å finne omtrent hvilken verdi programmet skriver ut når det kjøres. Sjekk svaret ditt! 
+
+
+:::{interactive-code}
 ---
-class: no-click, adaptive-figure
-width: 80%
+predict:
 ---
-:::
+v = 10
+s = 0
+a = -9.81
+t = 0
+dt = 1e-3
 
-
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Programmet nedenfor bruker strategien som er vist i figuren, men programmet er plassert i tilfeldig rekkefølge.
-
-Sett sammen programmet i riktig rekkefølge.
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Forklar hva betydningen til `dt`{l=python} i programmet har i figuren ovenfor.
-
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Forklar hva linje 6 i programmet betyr ut ifra figuren ovenfor.
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
-Hva er det kodelinje 8 gjør?
-
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} e
-Hvilken startposisjon er brukt i programmet?
-
-Bruk programmet til å bestemme sluttposisjonen til bevegelsen (du må nok gjøre `dt`{l=python} litt mindre)
-:::::::::::::
-
-
-::::::::::::::
-
-:::{parsons-puzzle}
-s = 0;t = 0;dt = 1
-while t < 8:
-    v = -t + 4.5
-    s = s + v * dt
-
+while v > 0:
     t = t + dt
+    v = v + a * dt
+    s = s + v * dt
 
 print(s)
 :::
+
+
+
+
+:::::::::::::
+
+
+
+:::::::::::::{part} b
+Programmet nedenfor regner på bevegelsen til en bil som bremser ned.
+
+Bruk bevegelseslikningene til å finne verdien som programmet skriver ut når det kjøres. Sjekk svaret nedenfor.
+
+
+:::{interactive-code}
+---
+predict:
+---
+v = 20 
+s = 0
+a = -5.0
+t = 0
+dt = 1e-3
+
+while v > 0:
+    t = t + dt
+    v = v + a * dt
+    s = s + v * dt
+
+print(s)
+:::
+
+
+:::::::::::::
 
 
 :::::::::::::::
@@ -245,59 +241,21 @@ print(s)
 
 
 :::::::::::::::{exercise} Oppgave 4
-I figuren nedenfor vises fartsgrafen til en gjenstand. Vi antar startposisjonen er $s = 0 \, \mathrm{m}$.
+En bil kjører med farten $25$ m/s. Føreren bremser med en konstant akselerasjon $-4.0 \, \mathrm{m/s^2}$ fram til bilen stopper helt.
 
 
-:::{plot}
-width: 80%
-function: x - 4, (0, 8)
-xmin: -1
-xmax: 9
-ymin: -5
-ymax: 5
-xlabel: $t / \mathrm{s}$
-ylabel: $v / (\mathrm{m/s})$
-:::
+:::{popup-code}
+t = 0   # starttid
+v = 25  # startfart
+s = 0   # startposisjon
 
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
+dt = 1e-3
 
-:::::::::::::{tab-item} a
-Bestem sluttposisjonen til gjenstanden ved regning (for hånd!). 
-
-
-:::::::::::::
-
-:::::::::::::{tab-item} b
-Fyll ut formlene som mangler i programmet nedenfor og kjør programmet. 
-
-Hva forteller utskriften om bevegelsen?
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Prøv å endre på verdien til bredden `dt`{l=python} slik at du bruker flere rektangler.
-
-Hva skjer med verdien som skrives ut av programmet?
-:::::::::::::
-
-
-
-::::::::::::::
-
-
-:::{interactive-code}
-s = 0 # startposisjon i meter
-t = 0 # starttid i sekunder
-dt = 0.1 # bredde på rektangler i sekunder
-
-while t < 8: # regn ut posisjonen over 8 sekunder
-    v = # FYLL INN
-    s = # FYLL INN
-
-    t = t + dt # Gå videre til neste tidpunkt
+while ????:
+    a = ????
+    v = ????
+    s = ????
+    t = ????
 
 
 print(s)
@@ -305,90 +263,82 @@ print(s)
 
 
 
+:::::::::::::{part} a
+Bruk bevegelseslikningene til å finne bremselengden til bilen.
+
+
+:::::::::::::
+
+
+:::::::::::::{part} b
+Fyll inn alle linjer i kodevindu som er markert med `????`{l=python}. 
+
+Kjør programmet og tolk resultatet. 
+:::::::::::::
+
+
+:::::::::::::{part} c
+Bruk programmet til å sammenligne bremselengden dersom man kjører i $80$ km/h, sammenlignet med $90$ km/h.
+
+
+
+:::::::::::::
+
+
 :::::::::::::::
+
 
 
 ---
 
 
 :::::::::::::::{exercise} Oppgave 5
-I figuren nedenfor vises fartsgrafen til ball som kastet rett opp i luften før den faller ned igjen og treffer bakken.
+En stein slippes fra ro fra en høyde på 100 meter over bakken.
 
-Startposisjonen til ballen er $s = 2 \, \mathrm{m}$ over bakken. Funksjonsuttrykket til farten (i m/s) er gitt ved 
+:::{popup-code}
+# Konstanter for simuleringen
+g = 9.81 # m/s^2
 
-$$
-v(t) = -9.81 t + 50
-$$
+# Startverdier for simuleringen
+s = 100    # m
+v = 0      # m/s
+t = 0      # s
 
+dt = 1e-3   # s
 
-:::{plot}
-width: 80%
-function: -9.81 * x + 50, (0, 10.23)
-xmin: -1
-xmax: 11
-ymin: -60
-ymax: 60
-ystep: 10
-xlabel: $t / \mathrm{s}$
-ylabel: $v / (\mathrm{m/s})$
+while ????:
+    a = ????
+    v = ????
+    s = ????
+    t = ????
+
+print(t) # skriv ut tiden det tar for steinen å treffe bakken
+
 :::
 
 
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Lag en grov skisse av posisjonsgrafen til ballen.
+:::::::::::::{part} a
+Bruk bevegelseslikningene til å finne hvor lang tid det før steinen treffer bakken.
 
 
 :::::::::::::
 
 
-
-:::::::::::::{tab-item} b
-Du vil se noen nye kodelinjer i programmet nedenfor som er forklart med kommentarer. Du trenger ikke tenke så mye over disse utover at å forstå hva rollen deres er.
-
-
-Fyll ut koden som mangler og kjør programmet. Sammenlign grafen din med skissa du tegnet i oppgave **a**.
+:::::::::::::{part} b
+Fyll ut alle kodelinjer markert med `????`{l=python} i kodevinduet.
 
 
-:::{interactive-code}
-tid = [] # liste som skal lagre tidspunkter
-posisjon = [] # liste som skal lagre posisjoner
-
-s = ???? # FYLL INN startposisjonen i meter
-t = ???? # FYLL INN: starttiden i sekunder
-dt = ???? # FYLL INN: velg bredde på rektanglene
-
-while ????: # FYLL INN: Kjør løkka så lenge ballen er over bakken
-    tid.append(t) # Legger til nåværende tid i lista
-    posisjon.append(s) # Legger til nåværende posisjon i lista
-
-    v = ???? # FYLL INN: formel for farten
-    s = ???? # FYLL INN: regn ut neste posisjon
-
-    t = ???? # FYLL INN: gå videre til neste tidpunkt
-
-
-
-# Tegner posisjonsgrafen ut ifra beregningene ovenfor
-import plotmath
-plotmath.plot(
-    xdata=tid,
-    ydata=posisjon,
-    xlabel="$t$ / s",
-    ylabel="$s$ / m",
-)
-plotmath.show()
-plotmath.close()
-
-:::
 :::::::::::::
 
 
+:::::::::::::{part} c
+Undersøk forskjellige verdier av steglengden `dt`{l=python} i programmet. 
 
-::::::::::::::
+Prøv ulike potenser av $10$ og finn hvilken potens som gir deg et svar som er nærmest det du regnet ut med bevegelseslikningene.
+
+
+:::::::::::::
+
 
 
 :::::::::::::::
@@ -399,79 +349,67 @@ plotmath.close()
 
 
 :::::::::::::::{exercise} Oppgave 6
-Farten $v(t)$ i m/s til en radiostyrt bil som kjører langs en rett linje er gitt ved 
+En stein blir sluppet fra et fly og opplever en akselerasjon både på grunn av tyngdekraften, men også luftmotsatnden. Når steinen har en fart $v$, så opplever den en akselerasjon gitt ved 
 
 $$
-v(t) =  \dfrac{1}{2}t^2 - 3t + 4 \qfor t \in [0, 6] \, \mathrm{s}
+a = -g + b\cdot v^2
 $$
 
-
-Vi antar at startposisjonen er $s = 0 \, \mathrm{m}$.
-
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Fyll ut programmet nedenfor og tegn posisjonsgrafen til bilen.
+der $b$ er en fysisk konstant som angir hvor sterk luftmotstanden er. For steinen er $b = 0.01 \, \mathrm{kg/m}$ 
 
 
-:::::::::::::
+:::{popup-code}
+# Konstanter for simuleringen
+
+g = 9.81    # m/s^2
+b = 0.01     # kg/m
+dt = 1e-3   # s
+
+# Startverdier
+t = 0       # s
+v = 0       # m/s
+s = 3000    # m
+
+while ????: 
+    a = ????
+    v = ????
+    s = ????
+    t = ????
 
 
-:::::::::::::{tab-item} b
-Hva er sluttposisjonen til bilen, ifølge fartsgrafen din?
-
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-1. Når kjører bilen fremover?
-2. Når rygger bilen?
-3. Når stopper bilen helt opp?
-
-> Det holder med omtrentlige verdier! 
-:::::::::::::
-
-
-::::::::::::::
-
-
-:::{interactive-code}
-tid = [] # liste som skal lagre tidspunkter
-posisjon = [] # liste som skal lagre posisjoner
-
-s = ???? # FYLL INN startposisjonen i meter
-t = ???? # FYLL INN: starttiden i sekunder
-dt = ???? # FYLL INN: velg bredde på rektanglene
-
-while ????: # FYLL INN: Hvor lenge varer bevegelsen?
-    tid.append(t) # Legger til nåværende tid i lista
-    posisjon.append(s) # Legger til nåværende posisjon i lista
-
-    v = ???? # FYLL INN: formel for farten
-    s = ???? # FYLL INN: regn ut neste posisjon
-
-    t = ???? # FYLL INN: gå videre til neste tidpunkt
-
-
-
-# Tegner posisjonsgrafen ut ifra beregningene ovenfor
-import plotmath
-plotmath.plot(
-    xdata=tid,
-    ydata=posisjon,
-    xlabel="$t$ / s",
-    ylabel="$s$ / m",
-)
-plotmath.show()
-plotmath.close()
-
+print(v)
 :::
 
 
+Programmet skal først beregne hvor stor fart steinen har rett før treffer bakken.
+
+:::::::::::::{part} a
+Fyll inn alle linjer i kodevindu som er markert med `????`{l=python}.
+
+Bruk programmet til å bestemme farten steinen har rett før den treffer bakken.
+
+:::::::::::::
+
+
+
+:::::::::::::{part} b
+Hvor lang tid tar det før steinen treffer bakken? (Bruk programmet ditt til å finne det ut).
+
+
+
+:::::::::::::
+
+
+
+
+
+Etter hvert om steinen faller, så vil den til slutt oppnå det som kalles for **terminalfart**. Det vil si at farten blir konstant og akselerasjon blir lik 0.
+
+:::::::::::::{part} c
+Finn terminalfarten til steinen. 
+
+Bruk så programmet ditt til å se om du får samme terminalfart.
+:::::::::::::
 
 
 
@@ -485,102 +423,71 @@ plotmath.close()
 
 
 :::::::::::::::{exercise} Oppgave 7
-Farten $v(t)$ i m/s til en bil er gitt ved et funksjonsuttrykk med **delt forskrift**. Det betyr at funksjonsuttrykket til farten er forskjellig på ulike tidsintervaller:
-
+En fallskjermhopper er utsatt for tyngdekraft og luftmotstand gjennom hele fallet. Når fallskjermhopperen har en fart $v$, vil akselerasjonen $a$ da være gitt ved:
 
 $$
-v(t) = 
-\begin{cases}
-    2t,\quad 0 \leq t < 2 \\
-    \\
-    4, \quad 2 \leq t < 4 \\
-    \\
-    -t + 8, \quad 4 \leq t \leq 8. 
-\end{cases}
+a = -g + bv^2 
 $$
 
-Vi antar at startposisjonen til bilen er $s = 0 \, \mathrm{m}$.
+der $b$ er en konstant som forteller hvor kraftig luftmotstanden er og $g$ er tyngdeakselerasjonen. Nederst finner du et interaktivt kodevindu du kan bruke til å simulere fallskjermhopperens bevegelse.
 
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Tegn fartsgrafen til bilen.
+Vi kan dele opp bevegelsen i to faser:
+* **Fase 1**: Fallskjermhopperen falleren fritt under påvirkning av tyngdekraft og luftmotstand. Konstant $b$ er et lite tall i denne perioden.
+* **Fase 2**: Fallskjermhopperen har åpnet fallskjermen og luftmotstanden blir mye større. Konstanten $b$ er nå endret til en større verdi.
 
 
-:::::::::::::
+Vi tenker oss at fallskjermhopperen skal dra ut fallskjermen når han er 1000 meter over bakken.
+
+:::{popup-code}
+# Konstanter for simuleringen
+
+g = 9.81    # m/s^2
+dt = 1e-3   # s
+
+# Startverdier
+t = 0       # s
+v = 0       # m/s
+s = 3000    # m
+
+while ????: 
+
+    if ????:
+        b = ????
+    else:
+        b = ????
+
+    a = ????
+    v = ????
+    s = ????
+    t = ????
 
 
-:::::::::::::{tab-item} b
-Fyll ut programmet nedenfor og tegn posisjonsgrafen til bilen.
-
-
-
-
-
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Hva blir sluttposisjonen til bilen?
-
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
-Hvor langt kjører bilen til sammen?
-
-
-:::::::::::::
-
-::::::::::::::
-
-
-:::{interactive-code}
-def v(t):
-    if 0 <= t < 2:
-        return 2*t
-    elif ????:
-        return 4
-    elif ????:
-        return ????
-
-
-tid = [] # liste som skal lagre tidspunkter
-posisjon = [] # liste som skal lagre posisjoner
-
-s = ???? # FYLL INN startposisjonen i meter
-t = ???? # FYLL INN: starttiden i sekunder
-dt = ???? # FYLL INN: velg bredde på rektanglene
-
-while ????: # FYLL INN: Hvor lenge varer bevegelsen?
-    tid.append(t) # Legger til nåværende tid i lista
-    posisjon.append(s) # Legger til nåværende posisjon i lista
-
-    s = ???? # FYLL INN: regn ut neste posisjon
-
-    t = ???? # FYLL INN: gå videre til neste tidpunkt
-
-
-
-# Tegner posisjonsgrafen ut ifra beregningene ovenfor
-import plotmath
-plotmath.plot(
-    xdata=tid,
-    ydata=posisjon,
-    xlabel="$t$ / s",
-    ylabel="$s$ / m",
-)
-plotmath.show()
-plotmath.close()
-
+print(v) # skriv ut farten til fallskjermhopperen ved bakken
 :::
+
+:::::::::::::{part} a
+Fyll inn i programmet i kodevinuet hvor det er markert med `????`{l=python} for å simulere fallskjermhopperen fram til fallskjermhopperen treffer bakken.
+
+Bruk programmet til å finne farten fallskjermhopperen har i det han treffer bakken.
+
+:::::::::::::
+
+
+
+:::::::::::::{part} b
+Bruk programmet til å finne hvor lang tid det tar før han treffer bakken.
+
+
+:::::::::::::
+
+
+:::::::::::::{part} c
+Bruk programmet til å finne hvilken verdi for $b$ som gjør at fallskjermhopperen treffer bakken i $1.0 \, \mathrm{m/s}$. 
+
+
+:::::::::::::
+
+
 
 
 :::::::::::::::
-
-
-
