@@ -1104,7 +1104,7 @@ Bruk bevegelseslikningene til å forutsi hva programmet til Anna skriver ut. Sje
 
 
 ::::{hint} Hint
-Fra betingelsen i `while`{l=python}-løkka ser vi at programmet holder på så lenge `{s > 2}`{l=python} som betyr at at programmet stopper når $s = 2
+Fra betingelsen i `while`{l=python}-løkka ser vi at programmet holder på så lenge `{s > 2}`{l=python} som betyr at at programmet stopper når $s = 2 \en m$. 
 
 Siden programmet skriver ut verdien til `t`{l=python} når løkka stopper, finner programmet ut hvor lang tid det tar før raketten kommer tilbake til starthøyden.
 ::::
@@ -1140,7 +1140,7 @@ Anna har også skrevet programmet nedenfor.
 Bruk bevegelseslikningene til å forutsi hva programmet til Anna skriver ut. Sjekk svaret nedenfor.
 
 :::{hint} Hint
-`while`{l=python}-løkka kjører så lenge raketten har positiv fart, altså så lenge den er på vei oppgaver. 
+`while`{l=python}-løkka kjører så lenge raketten har positiv fart, altså så lenge den er på vei oppover. 
 
 Når programmet stopper, skriver det ut verdien til `s`{l=python}, som er høyden raketten har nådd når den slutter å stige.
 :::
