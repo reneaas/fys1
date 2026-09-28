@@ -82,7 +82,7 @@ $$
 
 :::::::::::::
 
-Anna regner ut av gjennomsnittsfarten er $1{,}50 \en{m/s}$ i **b)**.
+Anna regner ut at gjennomsnittsfarten er $1{,}50 \en{m/s}$ i **b)**.
 
 
 :::::::::::::{part} c
@@ -250,7 +250,7 @@ Finn farten til vognen etter $10 \en{s}$.
 $v = 23 \en{m/s}$
 
 ::::{solution}
-Vi setter nå $t = 0$ til å være da vognen har en fart på $v_0 = 11 \en{m/s}$. Akselerasjonen er konstant $a = 2{,}0 \en{m/s^2}$, og vi ønsker å finne farten etter $10 \en{s}$ Hvis vi setter $t = 0$ når farten er $v_0 = 11 \en{m/s}$, så kan vi oppsummere de kjente og ukjente størrelsene som:
+Vi setter nå $t = 0$ til å være da vognen har en fart på $v_0 = 11 \en{m/s}$. Akselerasjonen er konstant $a = 2{,}0 \en{m/s^2}$, og vi ønsker å finne farten etter $10 \en{s}$. Vi kan oppsummere de kjente og ukjente størrelsene som:
 
 
 $$
@@ -340,19 +340,19 @@ Farten er gitt ved stigningstallet til posisjonsgrafen på hvert intervall.
 I intervallet $[0, 2{,}00\rangle \en s$ har vi at farten er
 
 $$
-v_1 = \dfrac{\Delta s}{\Delta t} = \dfrac{6{,}00 \en{m/s} - 0 \en{m/s}}{2{,}00 \en s - 0 \en{s}} = 3{,}00 \en{m/s}
+v_1 = \dfrac{\Delta s}{\Delta t} = \dfrac{6{,}00 \en{m} - 0 \en{m}}{2{,}00 \en s - 0 \en{s}} = 3{,}00 \en{m/s}
 $$
 
 I intervallet $[2{,}00, 5{,}00\rangle \en s$ har vi at 
 
 $$
-v_2 = \dfrac{\Delta s}{\Delta t} = \dfrac{6{,}00 \en{m/s} - 6{,}00 \en{m/s}}{5{,}00 \en s - 2{,}00 \en{s}} = 0 \en{m/s}
+v_2 = \dfrac{\Delta s}{\Delta t} = \dfrac{6{,}00 \en{m} - 6{,}00 \en{m}}{5{,}00 \en s - 2{,}00 \en{s}} = 0 \en{m/s}
 $$
 
 I intervallet $[5{,}00, 9{,}00\rangle \en s$ har vi at 
 
 $$
-v_3 = \dfrac{\Delta s}{\Delta t} = \dfrac{-2{,}00 \en{m/s} - 6{,}00 \en{m/s}}{9{,}00 \en s - 5{,}00 \en{s}} = -2{,}00 \en{m/s}
+v_3 = \dfrac{\Delta s}{\Delta t} = \dfrac{-2{,}00 \en{m} - 6{,}00 \en{m}}{9{,}00 \en s - 5{,}00 \en{s}} = -2{,}00 \en{m/s}
 $$
 
 
@@ -417,7 +417,7 @@ $8{,}0$, $8{,}0$
 $10$, $0{,}0$
 :::
 
-Syklisten har konstant fart på hvert tidsintervall, som vist i figuren nedenfor.
+Syklisten har konstant akselerasjon på hvert tidsintervall som vist i figuren nedenfor.
 
 
 :::{plot}
@@ -720,7 +720,7 @@ Vi har at
 * $a = \, ?$
 
 
-Vi kan bruke bevegeleslikningen $2as = v^2 - v_0^2$ og løse for $a$:
+Vi kan bruke bevegelseslikningen $2as = v^2 - v_0^2$ og løse for $a$:
 
 $$
 2as = v^2 - v_0^2 \liff a = \frac{v^2 - v_0^2}{2s}
