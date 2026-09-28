@@ -10,8 +10,16 @@ parts:
     chapters:
 
     - file: book/bevegelse/posisjonsgrafer_og_fartsgrafer/oppgaver.md
-    - file: book/bevegelse/programmering/oppgaver.md
-    - file: book/bevegelse/programmering/oppgaver_2.md
+    - file: book/bevegelse/programmering/teori.md
+      sections:
+      - file: book/bevegelse/programmering/oppgaver.md
+
+  - caption: Oppgavesamlinger
+    chapters:
+    - file: book/oppgavesamlinger/bevegelse/oppgaver.md
+
+
+
 
 
     
