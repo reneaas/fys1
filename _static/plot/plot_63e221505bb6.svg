@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="432pt" height="432pt" viewBox="0 0 432 432" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-20T17:55:24.011215</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 432 
+L 432 432 
+L 432 0 
+L 0 0 
+L 0 432 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 28.243211 403.756789 
+L 403.756789 403.756789 
+L 403.756789 28.243211 
+L 28.243211 28.243211 
+z
+" clip-path="url(#p63863eb654)" style="fill: #0072b2; opacity: 0.1; stroke: #0072b2; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 28.243211 403.756789 
+L 403.756789 403.756789 
+L 403.756789 28.243211 
+L 28.243211 28.243211 
+L 28.243211 403.756789 
+" clip-path="url(#p63863eb654)" style="fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <defs>
+     <path id="m427d86eee5" d="M 0 5 
+C 1.326016 5 2.597899 4.473168 3.535534 3.535534 
+C 4.473168 2.597899 5 1.326016 5 0 
+C 5 -1.326016 4.473168 -2.597899 3.535534 -3.535534 
+C 2.597899 -4.473168 1.326016 -5 0 -5 
+C -1.326016 -5 -2.597899 -4.473168 -3.535534 -3.535534 
+C -4.473168 -2.597899 -5 -1.326016 -5 0 
+C -5 1.326016 -4.473168 2.597899 -3.535534 3.535534 
+C -2.597899 4.473168 -1.326016 5 0 5 
+z
+" style="stroke: #000000; stroke-opacity: 0.8"/>
+    </defs>
+    <g clip-path="url(#p63863eb654)">
+     <use xlink:href="#m427d86eee5" x="216" y="216" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="line2d_3">
+    <g clip-path="url(#p63863eb654)">
+     <use xlink:href="#m427d86eee5" x="309.878394" y="403.756789" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="Quiver_1">
+    <path d="M 217.2312 216 
+L 217.2312 392.675989 
+L 222.156 391.444789 
+L 216 403.756789 
+L 209.844 391.444789 
+L 214.7688 392.675989 
+L 214.7688 216 
+L 217.2312 216 
+" clip-path="url(#p63863eb654)" style="fill: #dc5e8b"/>
+   </g>
+   <g id="Quiver_2">
+    <path d="M 308.647194 403.756789 
+L 308.647194 227.0808 
+L 303.722394 228.312 
+L 309.878394 216 
+L 316.034394 228.312 
+L 311.109594 227.0808 
+L 311.109594 403.756789 
+L 308.647194 403.756789 
+" clip-path="url(#p63863eb654)" style="fill: #0072b2"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p63863eb654">
+   <rect x="10.8" y="10.8" width="410.4" height="410.4"/>
+  </clipPath>
+ </defs>
+</svg>

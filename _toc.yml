@@ -14,6 +14,12 @@ parts:
       sections:
       - file: book/bevegelse/programmering/oppgaver.md
 
+  - caption: II. Krefter
+    numbered: 1
+    chapters:
+
+    - file: book/krefter/oppgaver.md
+
   - caption: Oppgavesamlinger
     chapters:
     - file: book/oppgavesamlinger/bevegelse/oppgaver.md
