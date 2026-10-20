@@ -1,5 +1,5 @@
 title: Fysikk 1
-author: Edvard Munch Videregående Skole
+author: René Ask, Edvard Munch Videregående Skole
 copyright: "2025"
 logo: logo/android-chrome-512x512.png
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", README.md, LICENSE.md, LICENSE_CONTENT.md, HOWTOWRITE.md]
