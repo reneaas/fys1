@@ -18,7 +18,7 @@ parts:
     numbered: 1
     chapters:
 
-    - file: book/krefter/oppgaver.md
+    - file: book/krefter/friksjon/oppgaver.md
 
   - caption: Oppgavesamlinger
     chapters:

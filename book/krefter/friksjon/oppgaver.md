@@ -331,7 +331,7 @@ text: Rx - R, Ry - 0.5, "$\vec R$", center-left
 
 :::::::::::::::{exercise} Oppgave 2
 En kloss med masse $5{,}0 \en{kg}$ ligger på et vannrett bord.
-En elev trekker kloss vannrett med en kraftmåler og observerer følgende: 
+En elev trekker klossen vannrett med en kraftmåler og observerer følgende: 
 
 * Klossen begynner å skli idet kraftmåleren viser $20 \en{N}$
 * Etter at klossen begynner å skli, kan eleven holde en konstant fart på klossen med en trekkraft på $12 \en{N}$
