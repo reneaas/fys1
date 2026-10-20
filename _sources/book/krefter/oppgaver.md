@@ -949,7 +949,7 @@ Bestem hvor langt boksen sklir sammenlagt fra maskinen begynner å dytte, til bo
 :::{hint} Hint
 Del opp bevegelsen i to faser:
 * Fase 1: Boksen blir akselerert av maskinen med $a = 2{,}9 \en{m/s^2}$ i $2{,}0 \en{s}$.
-* Fase 2: Boksen skir bortover gulvet der det bare er friksjon som virker på boksen i $x$-retning. Du kan finne en ny akselerasjon med Newtons 2.lov.
+* Fase 2: Boksen sklir bortover gulvet der det bare er friksjon som virker på boksen i $x$-retning. Du kan finne en ny akselerasjon med Newtons 2.lov.
 
 Regn ut hvor langt boksen forflytter seg i hver fase.
 :::
@@ -1693,6 +1693,8 @@ Siden klossen ikke akselererer i $y$-retning, må normalkraften fra gulvet være
 
 Begge friksjonskreftene peker mot venstre fordi klossen sklir mot høyre i forhold til både gulvet og taket.
 
+Lengden til friksjonskreftene er overdrevet for å få vise dem tydelig i fritt-legemediagrammet.
+
 
 :::{plot}
 width: 60%
@@ -1724,7 +1726,7 @@ text: x0 + dx, y0, "$x$", center-right
 text: x0, y0 + dy, "$y$", top-center
 let: Ntx = 0.35 * s
 let: Nty = s
-let: Nt = 0.7 * s
+let: Nt = 0.5 * G
 point: (Ntx, Nty)
 vector: (Ntx, Nty), 0, -Nt, blue
 text: Ntx, Nty - Nt, "$\vec N_t$", bottom-center
@@ -1734,7 +1736,7 @@ let: Ny = 0
 point: (Nx, Ny)
 vector: (Nx, Ny), 0, N, blue
 text: Nx, Ny + N, "$\vec N_g$", top-center
-let: mu = 0.25
+let: mu = 0.45
 let: Rtx = 0.2 * s
 let: Rty = s
 let: Rt = mu * Nt
@@ -2042,7 +2044,7 @@ $$
 
 
 :::::::::::::{part} c
-Bestem hvor langt iskuben beveger seg langs bakken før det ligger i ro i forhold til transportbåndet.
+Bestem hvor langt iskuben beveger seg langs bakken før den beveger seg med samme fart som transportbåndet.
 
 
 :::::{answer}
