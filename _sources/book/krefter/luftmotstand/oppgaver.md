@@ -58,7 +58,7 @@ t = 0
 
 # Fysiske konstanter
 g = 9.82 # tyngdeakselerasjon i Oslo i m/s^2
-k = ???? # Luftmotstandskoeffisient hvis du valgte L = kv^2
+k = ???? # Luftmotstandskoeffisient
 
 
 dt = 1e-3 # steglengde
