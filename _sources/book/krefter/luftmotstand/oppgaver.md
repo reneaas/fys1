@@ -71,7 +71,7 @@ while ????:
     sum_F = ????
 
 
-    # 2. Regn ut akselerasjonen
+    # 2. Regn ut akselerasjonen med Newtons 2.lov
     a = ????
 
     
