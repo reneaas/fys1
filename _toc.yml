@@ -19,6 +19,8 @@ parts:
     chapters:
 
     - file: book/krefter/friksjon/oppgaver.md
+    - file: book/krefter/luftmotstand/oppgaver.md
+    # - file: book/krefter/oppdrift/teori.md
 
   - caption: Oppgavesamlinger
     chapters:
