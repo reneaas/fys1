@@ -391,19 +391,26 @@ $$
 :::::::::::::::{exercise} Oppgave 3
 :::{plot}
 figsize: (6, 3)
-width: 350px
+width: 400px
 align: right
 axis: off
 axis: equal 
 let: l_A = 2
 let: l_B = 1
-let: d = 2
+let: d = 1.5
+let: x0 = -2
+let: y0 = d
+let: s = 0.8
+vector: (x0, y0), s, 0, black
+vector: (x0, y0), 0, s, black
+text: x0 + s, y0, "$x$", center-right
+text: x0, y0 + s, "$y$", top-center
 polygon: (0, 0), (l_A, 0), (l_A, l_A), (0, l_A), blue, 0.2
 polygon: (l_A + d, 0), (l_A + d + l_B, 0), (l_A + d + l_B, l_B), (l_A + d, l_B), blue, 0.2
 line-segment: (l_A, l_B/2), (l_A + d, l_B/2), black, solid
 point: (d + l_A + l_B, l_B/2)
-vector: (d + l_A + l_B, l_B/2), 1.5, 0, blue
-text: d + l_A + l_B + 1, l_B / 2, "$\vec T$", top-right
+vector: (d + l_A + l_B, l_B/2), 1, 0, blue
+text: d + l_A + l_B + 1, l_B / 2, "$\vec T$", center-right
 text: l_A/2, l_A, "A", top-center
 text: l_A + d + l_B/2, l_B, "B", top-center
 fontsize: 24
