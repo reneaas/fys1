@@ -20,6 +20,7 @@ parts:
 
     - file: book/krefter/friksjon/oppgaver.md
     - file: book/krefter/luftmotstand/oppgaver.md
+    - file: book/krefter/sammensatte_systemer/oppgaver.md
     # - file: book/krefter/oppdrift/teori.md
 
   - caption: Oppgavesamlinger
@@ -27,7 +28,9 @@ parts:
     - file: book/oppgavesamlinger/bevegelse/oppgaver.md
 
 
-
+  # - caption: Dev
+  #   chapters:
+  #   - file: book/dev.md
 
 
     
